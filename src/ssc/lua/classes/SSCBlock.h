@@ -1,6 +1,12 @@
 #ifndef HLC_SSCBLOCK
 #define HLC_SSCBLOCK
 
+#include "../../../ssc_libs.h"
+
+#include <lua.h>
+#include <lualib.h>
+#include <lauxlib.h>
+
 // 预编译定义
 #undef SCC
 #define SCC "SSCBlock" 	/**< 类名称 */

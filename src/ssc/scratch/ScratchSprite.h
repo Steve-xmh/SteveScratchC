@@ -1,6 +1,7 @@
 #ifndef HEADER_SSC_SCRATCH_SCRATCHSPRITE
 #define HEADER_SSC_SCRATCH_SCRATCHSPRITE
 
+#include "../../ssc_libs.h"
 
 typedef struct sscScratchSprite
 {

@@ -10,7 +10,7 @@ void ssc_widget_style_add(GtkContainer* c,GtkWidget* w,gpointer p)
 {
 	ssc_libs_gtk_style_context_add_provider(ssc_libs_gtk_widget_get_style_context(w),p,G_MAXUINT);
     if (GTK_IS_CONTAINER(w))
-		ssc_libs_g_signal_connect(w,"add",G_CALLBACK(ssc_widget_style_add),p)
+		ssc_libs_g_signal_connect(w,"add",G_CALLBACK(ssc_widget_style_add),p);
 		ssc_libs_gtk_container_forall(GTK_CONTAINER(w),(GtkCallback)ssc_widget_style,p);
 }
 
@@ -18,7 +18,7 @@ void ssc_widget_style(GtkWidget *w,GtkStyleProvider* p)
 {
     ssc_libs_gtk_style_context_add_provider(ssc_libs_gtk_widget_get_style_context(w),p,G_MAXUINT);
     if (GTK_IS_CONTAINER(w))
-		ssc_libs_g_signal_connect(w,"add",G_CALLBACK(ssc_widget_style_add),p)
+		ssc_libs_g_signal_connect(w,"add",G_CALLBACK(ssc_widget_style_add),p);
 		ssc_libs_gtk_container_forall(GTK_CONTAINER(w),(GtkCallback)ssc_widget_style,p);
 }
 

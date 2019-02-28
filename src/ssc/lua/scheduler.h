@@ -6,6 +6,7 @@
 #include <lualib.h>
 #include <lauxlib.h>
 
+#include "../../ssc_libs.h"
 #include "../../config.h" //所有宏配置在这里
 
 typedef struct sscLuaTask

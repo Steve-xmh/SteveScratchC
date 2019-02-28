@@ -36,5 +36,9 @@ typedef struct sscCompoments /**< 用于存放 SSC 窗口所需组件以供其他模块使用 */
  *
  */
 sscCompoments* ssc_widgets_get_compoments(void);
+
+void ssc_widget_style_add(GtkContainer* c,GtkWidget* w,gpointer p);
+void ssc_widget_style(GtkWidget *w,GtkStyleProvider* p);
+
 struct sscCompoments* ssc_widgets_init();
 #endif // HEADER_SSC_SSC_WIDGETS

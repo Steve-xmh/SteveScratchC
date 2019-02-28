@@ -1,6 +1,8 @@
 #ifndef HEADER_SSC_BLOCK_BLOCKBASE
 #define HEADER_SSC_BLOCK_BLOCKBASE
 
+#include "../../ssc_libs.h"
+
 typedef struct sscBlockBase
 {
     gchar* cmdName; /**< 本模块指令名称 */

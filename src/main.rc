@@ -1,4 +1,4 @@
-#include "..\version.h"
+#include "version.h"
 SSIcon ICON icon.ico
 
 1 VERSIONINFO
