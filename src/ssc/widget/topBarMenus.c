@@ -14,25 +14,25 @@ gboolean ssc_topBarMenus_setup(GtkBuilder* b)/**< 初始化菜单 */
 {
 	GObject* t;
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-new"))) return FALSE;//新建工程
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"new");
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"new");
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-open"))) return FALSE;
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"open");//打开工程
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"open");//打开工程
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-save"))) return FALSE;
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"save");//保存工程
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"save");//保存工程
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-save-as"))) return FALSE;
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"save-as");//另存为
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"save-as");//另存为
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-quit"))) return FALSE;
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"quit");//退出程序
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"quit");//退出程序
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-cut"))) return FALSE;
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"cut");//剪切
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"cut");//剪切
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-copy"))) return FALSE;
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"copy");//复制
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"copy");//复制
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-paste"))) return FALSE;
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"paste");//粘贴
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"paste");//粘贴
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-delete"))) return FALSE;
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"delete");//删除
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"delete");//删除
 	if(!(t = ssc_topBarMenus_get(b,"ssc-menu-about"))) return FALSE;
-	g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"about");//关于
+	ssc_libs_g_signal_connect(t,"activate",G_CALLBACK(ssc_topBar_clicked),"about");//关于
 
     return TRUE;
 };

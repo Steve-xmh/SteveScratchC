@@ -399,7 +399,7 @@ GdkRGBA* ssc_specs_get_color_by_category_name(gchar* name)
 			{
 				return ssc_specs_categories[i].color;
 			}else{
-				ssc_specs_categories[i].color = g_malloc(sizeof(GdkRGBA));
+				ssc_specs_categories[i].color = ssc_libs_g_malloc(sizeof(GdkRGBA));
 				gdk_rgba_parse(ssc_specs_categories[i].color,ssc_specs_categories[i].colorStr);
 				return ssc_specs_categories[i].color;
 			}

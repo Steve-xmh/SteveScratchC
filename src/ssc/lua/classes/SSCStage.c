@@ -45,11 +45,11 @@ int ssc_class_stage_paint(lua_State *L)
 
 	sscCompoments* com = ssc_widgets_get_compoments();
 	cairo_surface_t* sf = com->stageSketchPad;
-	cairo_t* cr = cairo_create(sf);
-	cairo_set_source_rgba(cr,r,g,b,a);
-	cairo_rectangle(cr,x,y,1,1);
-	cairo_fill(cr);
-	cairo_destroy(cr);
+	cairo_t* cr = ssc_libs_cairo_create(sf);
+	ssc_libs_cairo_set_source_rgba(cr,r,g,b,a);
+	ssc_libs_cairo_rectangle(cr,x,y,1,1);
+	ssc_libs_cairo_fill(cr);
+	ssc_libs_cairo_destroy(cr);
 	if(ssc_libs_gtk_widget_get_window (com->stage))
 	gdk_window_invalidate_rect (ssc_libs_gtk_widget_get_window (com->stage),
                               NULL,
@@ -63,10 +63,10 @@ int ssc_class_stage_clear(lua_State *L)
 {
 	sscCompoments* com = ssc_widgets_get_compoments();
 	cairo_surface_t* sf = com->stageSketchPad;
-	cairo_t* cr = cairo_create(sf);
-	cairo_set_operator(cr,CAIRO_OPERATOR_CLEAR);
-	cairo_paint (cr);
-	cairo_destroy(cr);
+	cairo_t* cr = ssc_libs_cairo_create(sf);
+	ssc_libs_cairo_set_operator(cr,CAIRO_OPERATOR_CLEAR);
+	ssc_libs_cairo_paint (cr);
+	ssc_libs_cairo_destroy(cr);
 	if(ssc_libs_gtk_widget_get_window (com->stage))
 	gdk_window_invalidate_rect (ssc_libs_gtk_widget_get_window (com->stage),
                               NULL,

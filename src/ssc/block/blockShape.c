@@ -27,9 +27,9 @@ gboolean drawBlock(GtkWidget* block,cairo_t *C,gpointer data)
 
 	//调整模块大小
 	cairo_text_extents_t ex;
-	cairo_set_font_size(C,SSC_BF_SIZE);
-	cairo_select_font_face(C,"微软雅黑",CAIRO_FONT_SLANT_NORMAL,CAIRO_FONT_WEIGHT_NORMAL);
-    cairo_text_extents(C,bs->text,&ex);
+	ssc_libs_cairo_set_font_size(C,SSC_BF_SIZE);
+	ssc_libs_cairo_select_font_face(C,"微软雅黑",CAIRO_FONT_SLANT_NORMAL,CAIRO_FONT_WEIGHT_NORMAL);
+    ssc_libs_cairo_text_extents(C,bs->text,&ex);
     //print("%f\t%f\t%f\t%f\t%f\t%f\n",ex.width,ex.height,ex.x_bearing,ex.y_bearing,ex.x_advance,ex.y_advance);
 
     guint hOffset = 0;//对于头部模块需要一点偏移
@@ -45,7 +45,7 @@ gboolean drawBlock(GtkWidget* block,cairo_t *C,gpointer data)
     width = ssc_libs_gtk_widget_get_allocated_width (block);
 	height = ssc_libs_gtk_widget_get_allocated_height (block);
 
-	cairo_set_line_width(C,2);
+	ssc_libs_cairo_set_line_width(C,2);
     switch(bs->shape)//渲染模块
     {
 	case SSC_BT_CMD://控件模块
@@ -66,17 +66,17 @@ gboolean drawBlock(GtkWidget* block,cairo_t *C,gpointer data)
 		bs->color = ssc_specs_get_color_by_category_id(ssc_specs_get_category_by_block_spec(bs->text));
 	}
 	gdk_cairo_set_source_rgba (C, bs->color);
-	cairo_fill_preserve(C);
+	ssc_libs_cairo_fill_preserve(C);
 	gdk_cairo_set_source_rgba (C, getOutlineColor(bs->color));
 	//cairo_set_line_width(C,2);
-	cairo_stroke(C);
+	ssc_libs_cairo_stroke(C);
 
     //打印标签
 
 	gdk_cairo_set_source_rgba (C, &fontColor);
 
-	cairo_move_to(C,8,SSC_BF_OUTLINEW + 8 - ex.y_bearing+hOffset);
-    cairo_show_text(C,bs->text);
+	ssc_libs_cairo_move_to(C,8,SSC_BF_OUTLINEW + 8 - ex.y_bearing+hOffset);
+    ssc_libs_cairo_show_text(C,bs->text);
 
     return FALSE;
 }
@@ -84,7 +84,7 @@ gboolean drawBlock(GtkWidget* block,cairo_t *C,gpointer data)
 sscBlockShape* ssc_block_createBlock(int shape,GdkRGBA* color)
 {
     sscBlockShape* bs;
-    bs = (sscBlockShape*) g_malloc(sizeof(sscBlockShape));//新建一个
+    bs = (sscBlockShape*) ssc_libs_g_malloc(sizeof(sscBlockShape));//新建一个
 
     GtkWidget* block;
     block = ssc_libs_gtk_drawing_area_new();
@@ -97,14 +97,14 @@ sscBlockShape* ssc_block_createBlock(int shape,GdkRGBA* color)
     //expose-event
     ssc_libs_gtk_widget_set_size_request(block,100,50);
 
-    g_signal_connect(block,"draw",G_CALLBACK(drawBlock),bs);
+    ssc_libs_g_signal_connect(block,"draw",G_CALLBACK(drawBlock),bs);
     return bs;
 }
 
 sscBlockShape* ssc_block_shape_by_name(int shape,gchar* name)
 {
     sscBlockShape* bs;
-    bs = (sscBlockShape*) g_malloc(sizeof(sscBlockShape));//新建一个
+    bs = (sscBlockShape*) ssc_libs_g_malloc(sizeof(sscBlockShape));//新建一个
 
     GtkWidget* block;
     block = ssc_libs_gtk_drawing_area_new();
@@ -117,7 +117,7 @@ sscBlockShape* ssc_block_shape_by_name(int shape,gchar* name)
     //expose-event
     ssc_libs_gtk_widget_set_size_request(block,100,50);
 
-    g_signal_connect(block,"draw",G_CALLBACK(drawBlock),bs);
+    ssc_libs_g_signal_connect(block,"draw",G_CALLBACK(drawBlock),bs);
     return bs;
 }
 
@@ -132,8 +132,8 @@ sscBlockShape* ssc_block_createBlock_by_default()
 {
     sscBlockShape* bs;
     GdkRGBA* c;
-    bs = (sscBlockShape*) g_malloc(sizeof(sscBlockShape));//新建一个
-    c = (GdkRGBA*) g_malloc(sizeof(c)); //
+    bs = (sscBlockShape*) ssc_libs_g_malloc(sizeof(sscBlockShape));//新建一个
+    c = (GdkRGBA*) ssc_libs_g_malloc(sizeof(c)); //
     c->blue = 0xFF/0xFF;
     c->green = 0xFF/0x99;
     c->red = 0;
@@ -144,7 +144,7 @@ sscBlockShape* ssc_block_createBlock_by_default()
     //expose-event
 
     ssc_libs_gtk_widget_set_size_request(block,100,SSC_BF_SIZE+16);
-    g_signal_connect(block,"draw",G_CALLBACK(drawBlock),bs);
+    ssc_libs_g_signal_connect(block,"draw",G_CALLBACK(drawBlock),bs);
 
     bs->widget = block;
     bs->color = c;
@@ -165,7 +165,7 @@ sscBlockShape* ssc_block_createBlock_by_default()
 sscBlockShape* ssc_block_shape_clone(sscBlockShape* bs)
 {
 	sscBlockShape* cbs;
-    cbs = (sscBlockShape*) g_malloc(sizeof(sscBlockShape));//新建一个
+    cbs = (sscBlockShape*) ssc_libs_g_malloc(sizeof(sscBlockShape));//新建一个
 	cbs->color = bs->color;
 	cbs->isInter = bs->isInter;
 	cbs->hasLoopArrow = bs->hasLoopArrow;
@@ -176,7 +176,7 @@ sscBlockShape* ssc_block_shape_clone(sscBlockShape* bs)
 	cbs->shape = bs->shape;
 	cbs->widget = ssc_libs_gtk_drawing_area_new();
 	ssc_libs_gtk_widget_set_size_request(cbs->widget,100,50);
-	g_signal_connect(cbs->widget,"draw",G_CALLBACK(drawBlock),cbs);
+	ssc_libs_g_signal_connect(cbs->widget,"draw",G_CALLBACK(drawBlock),cbs);
 	if(bs->cWidget)
 	{
 		//cbs->cWidget = g_obj;
@@ -205,8 +205,8 @@ void ssc_block_shape_destroy(sscBlockShape* bs,gboolean needDestroyString)
 
 	if(needDestroyString)
 	{
-		g_free(bs->text);
+		ssc_libs_g_free(bs->text);
 		bs->text = NULL;
 	}
-	g_free(bs);
+	ssc_libs_g_free(bs);
 }

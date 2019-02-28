@@ -7,6 +7,7 @@
 		<Option pch_mode="2" />
 		<Option compiler="msys2_gnu_gcc_compiler_x64" />
 		<Build>
+			<Script file="lib_finder.script" />
 			<Target title="Debug-w64">
 				<Option output="bin/Debug-w64/SteveScratchC" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug-w64/" />
@@ -14,6 +15,7 @@
 				<Option compiler="msys2_gnu_gcc_compiler_x64" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-DWINDOWS" />
 				</Compiler>
 			</Target>
 			<Target title="Release-w64">
@@ -23,6 +25,7 @@
 				<Option compiler="msys2_gnu_gcc_compiler_x64" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-DWINDOWS" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,11 +35,126 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="src/chineseEncode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/chineseEncode.h" />
+		<Unit filename="src/config.h" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.h" />
+		<Unit filename="src/main.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="src/ssc/block/block.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/block.h" />
+		<Unit filename="src/ssc/block/blockBase.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/blockBase.h" />
+		<Unit filename="src/ssc/block/blockShape.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/blockShape.h" />
+		<Unit filename="src/ssc/block/shapeDraw/cmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/shapeDraw/cmd.h" />
+		<Unit filename="src/ssc/block/shapeDraw/hat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/shapeDraw/hat.h" />
+		<Unit filename="src/ssc/block/shapeDraw/num.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/shapeDraw/num.h" />
+		<Unit filename="src/ssc/block/shapeDraw/shapes.h" />
+		<Unit filename="src/ssc/interpreter/Interpreter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/interpreter/Interpreter.h" />
+		<Unit filename="src/ssc/interpreter/Thread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/interpreter/Thread.h" />
+		<Unit filename="src/ssc/lua/classes/SSCBlock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/classes/SSCBlock.h" />
+		<Unit filename="src/ssc/lua/classes/SSCStage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/classes/SSCStage.h" />
+		<Unit filename="src/ssc/lua/commandBar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/commandBar.h" />
+		<Unit filename="src/ssc/lua/lua.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/lua.h" />
+		<Unit filename="src/ssc/lua/scheduler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/scheduler.h" />
+		<Unit filename="src/ssc/scratch/PaletteBuilder.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/scratch/PaletteBuilder.h" />
+		<Unit filename="src/ssc/scratch/ScratchSprite.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/scratch/ScratchSprite.h" />
+		<Unit filename="src/ssc/ssc_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/ssc_main.h" />
+		<Unit filename="src/ssc/ssc_specs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/ssc_specs.h" />
+		<Unit filename="src/ssc/ssc_widgets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/ssc_widgets.h" />
+		<Unit filename="src/ssc/stage/ScratchStage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/stage/ScratchStage.h" />
+		<Unit filename="src/ssc/stage/stageRender.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/stage/stageRender.h" />
+		<Unit filename="src/ssc/widget/topBarMenus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/widget/topBarMenus.h" />
+		<Unit filename="src/ssc/widget/topBarMenusFunction.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/widget/topBarMenusFunction.h" />
+		<Unit filename="src/ssc/widget/widgetEvents.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/widget/widgetEvents.h" />
+		<Unit filename="src/ssc_libs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc_libs.h" />
+		<Unit filename="src/version.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
-			<lib_finder disable_auto="1" />
+			<lib_finder disable_auto="1">
+				<lib name="lua5.3" />
+				<lib name="gtk+-3.0" />
+				<lib name="cairo" />
+				<lib name="librsvg-2.0" />
+			</lib_finder>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

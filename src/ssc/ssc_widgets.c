@@ -58,7 +58,7 @@ sscCompoments* ssc_widgets_get_compoments()
 // 从布局文件初始化窗口
 struct sscCompoments* ssc_widgets_init()
 {
-    struct sscCompoments *compoments = g_new(struct sscCompoments,1);
+    struct sscCompoments *compoments = ssc_libs_g_new(struct sscCompoments,1);
     com = compoments;
     compoments->isInited = -1;//未成功-布局初始化
 	GtkBuilder* builder = ssc_libs_gtk_builder_new();
@@ -99,17 +99,17 @@ struct sscCompoments* ssc_widgets_init()
 	//ssc_libs_gtk_window_set_default_icon_from_file("icons/icon.ico",NULL);
 
 	GList* icons = NULL;
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon16.png",NULL));
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon32.png",NULL));
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon48.png",NULL));
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon128.png",NULL));
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon256.png",NULL));
+	icons = ssc_libs_g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon16.png",NULL));
+	icons = ssc_libs_g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon32.png",NULL));
+	icons = ssc_libs_g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon48.png",NULL));
+	icons = ssc_libs_g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon128.png",NULL));
+	icons = ssc_libs_g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon256.png",NULL));
 
 	ssc_libs_gtk_window_set_default_icon_list(icons);
 	ssc_libs_gtk_widget_set_size_request(compoments->window,SSC_WINDOW_MINWIDTH,SSC_WINDOW_MINHEIGHT);
 	ssc_libs_gtk_image_set_from_file(GTK_IMAGE(ssc_get_window_component(builder,"ssc-window-icon")),"icons/icon48.png");
 	ssc_lua_setOutput(compoments->luaConsole);//设置 lua 输出
-	g_signal_connect(compoments->commandBar,"activate",G_CALLBACK(ssc_commandBar_activate),NULL);
+	ssc_libs_g_signal_connect(compoments->commandBar,"activate",G_CALLBACK(ssc_commandBar_activate),NULL);
 	ssc_stage_init(compoments->stage);// 初始化舞台
 	ssc_topBarMenus_setup(builder);// 初始化顶部菜单栏
 	print("P\n");

@@ -13,22 +13,22 @@ gboolean ssc_stage_render(GtkWidget* stage,cairo_t *C,gpointer data)
 
 	ssc_libs_gtk_render_background(content,C,0,0,w,h);
 
-    cairo_set_line_width(C,2);
-    cairo_move_to(C,0,0);
-    cairo_line_to(C,w,0);
-    cairo_line_to(C,w,h);
-    cairo_line_to(C,0,h);
+    ssc_libs_cairo_set_line_width(C,2);
+    ssc_libs_cairo_move_to(C,0,0);
+    ssc_libs_cairo_line_to(C,w,0);
+    ssc_libs_cairo_line_to(C,w,h);
+    ssc_libs_cairo_line_to(C,0,h);
 
-    cairo_set_source_rgb(C,1,1,1);
-	cairo_fill(C);
+    ssc_libs_cairo_set_source_rgb(C,1,1,1);
+	ssc_libs_cairo_fill(C);
 
     //画一个 SVG 图像
 
 	if (sketchPad)
 	{
-		cairo_move_to(C,0,0);
-		cairo_set_source_surface(C,sketchPad,0,0);
-		cairo_paint(C);
+		ssc_libs_cairo_move_to(C,0,0);
+		ssc_libs_cairo_set_source_surface(C,sketchPad,0,0);
+		ssc_libs_cairo_paint(C);
 	}
 
 	RsvgHandle* svg;
@@ -37,7 +37,7 @@ gboolean ssc_stage_render(GtkWidget* stage,cairo_t *C,gpointer data)
 
 	if (svg)
 	{
-		cairo_translate(C,480/2-48,320/2-50.5);
+		ssc_libs_cairo_translate(C,480/2-48,320/2-50.5);
 		ssc_libs_rsvg_handle_render_cairo(svg,C);
 	}
 
@@ -45,14 +45,14 @@ gboolean ssc_stage_render(GtkWidget* stage,cairo_t *C,gpointer data)
     ssc_libs_g_object_unref(svg);
 	*/
 
-	cairo_move_to(C,0,0);
-    cairo_line_to(C,w,0);
-    cairo_line_to(C,w,h);
-    cairo_line_to(C,0,h);
-    cairo_close_path(C);
+	ssc_libs_cairo_move_to(C,0,0);
+    ssc_libs_cairo_line_to(C,w,0);
+    ssc_libs_cairo_line_to(C,w,h);
+    ssc_libs_cairo_line_to(C,0,h);
+    ssc_libs_cairo_close_path(C);
 	ssc_libs_gtk_style_context_get_border_color(content,ssc_libs_gtk_style_context_get_state(content),&c);
     gdk_cairo_set_source_rgba(C,&c);
-    cairo_stroke(C);
+    ssc_libs_cairo_stroke(C);
 
 	return FALSE;
 
@@ -66,10 +66,10 @@ gboolean ssc_stage_conf(GtkWidget *widget, GdkEvent *event, gpointer data)
 																	ssc_libs_gtk_widget_get_allocated_height(widget));
 	if(sketchPad)//如果有旧的画板的话，把旧画板的内容黏贴复制过来
 	{
-		cairo_t* cr = cairo_create(newsp);
-		cairo_set_source_surface(cr,sketchPad,0,0);
-		cairo_paint(cr);
-		cairo_surface_destroy(sketchPad);
+		cairo_t* cr = ssc_libs_cairo_create(newsp);
+		ssc_libs_cairo_set_source_surface(cr,sketchPad,0,0);
+		ssc_libs_cairo_paint(cr);
+		ssc_libs_cairo_surface_destroy(sketchPad);
 		sketchPad = NULL;
 	}
 	sketchPad = newsp;
