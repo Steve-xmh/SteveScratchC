@@ -56,9 +56,9 @@ sscCompoments* ssc_widgets_get_compoments()
 }
 
 // 从布局文件初始化窗口
-struct sscCompoments* ssc_widgets_init()
+sscCompoments* ssc_widgets_init()
 {
-    struct sscCompoments *compoments = ssc_libs_g_new(struct sscCompoments,1);
+	sscCompoments *compoments = ssc_libs_g_malloc(sizeof(compoments));
     com = compoments;
     compoments->isInited = -1;//未成功-布局初始化
 	GtkBuilder* builder = ssc_libs_gtk_builder_new();

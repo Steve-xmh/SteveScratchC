@@ -2,7 +2,7 @@
 
 void ssc_libs_ssc_libs_gtk_init(int* argc,char*** argv)
 {
-	ssc_libs_gtk_init(argc,argv);
+	gtk_init(argc,argv);
 }
 
 gpointer ssc_libs_g_malloc(gsize n_bytes)
@@ -44,3 +44,20 @@ GdkWindow* ssc_libs_gtk_widget_get_window(GtkWidget* w)
 {
 	return gtk_widget_get_window(w);
 }
+
+void ssc_libs_cairo_move_to(cairo_t *C,double x,double y)
+{
+	cairo_move_to(C,x,y);
+}
+
+void ssc_libs_cairo_line_to(cairo_t *C,double x,double y)
+{
+	cairo_line_to(C,x,y);
+}
+
+void ssc_libs_gdk_window_create_similar_surface()
+{
+	return gdk_window_create_similar_surface();
+}
+
+#define ssc_libs_g_new(st,s) g_new(st,s)

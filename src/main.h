@@ -31,7 +31,6 @@ lua_State *luaP;
 #include <locale.h>
 #include "config.h" //所有宏配置在这里
 #define LOCALEDIR "share/locale"
-#include "chineseEncode.h" //用于中文编码的转换 onChar()
 #include "ssc/ssc_main.h"
 
 struct sscCompoments* SSCComponents;

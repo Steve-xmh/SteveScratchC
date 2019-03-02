@@ -22,7 +22,7 @@ gboolean drawBlock(GtkWidget* block,cairo_t *C,gpointer data)
 
 	context = ssc_libs_gtk_widget_get_style_context (block);
 
-	ssc_libs_gtk_render_background (context, C, 0, 0, width, height);
+	ssc_libs_gtk_render_background(context, C, 0, 0, width, height);
 	//在这里绘制...
 
 	//调整模块大小

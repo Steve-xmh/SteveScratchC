@@ -1,7 +1,7 @@
 #ifndef HEADER_SSC_SPECS
 #define HEADER_SSC_SPECS
 
-#include <gtk/gtk.h>
+#include "../ssc_libs.h"
 #include <lua.h>
 #include <lualib.h>
 #include <lauxlib.h>

@@ -60,7 +60,7 @@ gboolean ssc_stage_render(GtkWidget* stage,cairo_t *C,gpointer data)
 //
 gboolean ssc_stage_conf(GtkWidget *widget, GdkEvent *event, gpointer data)
 {
-	cairo_surface_t* newsp = gdk_window_create_similar_surface(ssc_libs_gtk_widget_get_window(widget),
+	cairo_surface_t* newsp = ssc_libs_gdk_window_create_similar_surface(ssc_libs_gtk_widget_get_window(widget),
 																	CAIRO_CONTENT_COLOR_ALPHA,
 																	ssc_libs_gtk_widget_get_allocated_width(widget),
 																	ssc_libs_gtk_widget_get_allocated_height(widget));

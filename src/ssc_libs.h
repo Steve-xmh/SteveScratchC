@@ -2,6 +2,8 @@
 #define HEADER_SSC_LIBS
 
 #include <gtk/gtk.h>
+#include <gdk/gdk.h>
+#include <glib.h>
 #include <glib/gi18n.h>
 #include <cairo.h>
 
@@ -20,6 +22,9 @@ void ssc_libs_gtk_widget_show_all(GtkWidget* w);
 GtkStyleContext* ssc_libs_gtk_widget_get_style_context(GtkWidget* w);
 GtkWidget* ssc_libs_gtk_drawing_area_new(void);
 GdkWindow* ssc_libs_gtk_widget_get_window(GtkWidget* w);
+void ssc_libs_cairo_move_to(cairo_t *C,double x,double y);
+void ssc_libs_cairo_line_to(cairo_t *C,double x,double y);
+void ssc_libs_gtk_render_background();
 
 #endif // HEADER_SSC_LIBS
 
