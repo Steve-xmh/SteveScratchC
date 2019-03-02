@@ -10,16 +10,21 @@ void ssc_widget_style_add(GtkContainer* c,GtkWidget* w,gpointer p)
 {
 	gtk_style_context_add_provider(gtk_widget_get_style_context(w),p,G_MAXUINT);
     if (GTK_IS_CONTAINER(w))
+	{
 		g_signal_connect(w,"add",G_CALLBACK(ssc_widget_style_add),p);
 		gtk_container_forall(GTK_CONTAINER(w),(GtkCallback)ssc_widget_style,p);
+	}
 }
 
 void ssc_widget_style(GtkWidget *w,GtkStyleProvider* p)
 {
     gtk_style_context_add_provider(gtk_widget_get_style_context(w),p,G_MAXUINT);
     if (GTK_IS_CONTAINER(w))
+	{
 		g_signal_connect(w,"add",G_CALLBACK(ssc_widget_style_add),p);
 		gtk_container_forall(GTK_CONTAINER(w),(GtkCallback)ssc_widget_style,p);
+	}
+
 }
 
 GObject* ssc_get_window_component(GtkBuilder* b,gchar* n)
@@ -58,7 +63,7 @@ sscCompoments* ssc_widgets_get_compoments()
 // 从布局文件初始化窗口
 sscCompoments* ssc_widgets_init()
 {
-	sscCompoments *compoments = g_malloc(sizeof(compoments));
+	sscCompoments *compoments = g_new(sscCompoments,1);
     com = compoments;
     compoments->isInited = -1;//未成功-布局初始化
 	GtkBuilder* builder = gtk_builder_new();
@@ -99,11 +104,11 @@ sscCompoments* ssc_widgets_init()
 	//gtk_window_set_default_icon_from_file("icons/icon.ico",NULL);
 
 	GList* icons = NULL;
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon16.png",NULL));
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon32.png",NULL));
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon48.png",NULL));
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon128.png",NULL));
-	icons = g_list_prepend(icons,gdk_pixbuf_new_from_file("icons/icon256.png",NULL));
+	icons = g_list_prepend(icons,(gpointer)gdk_pixbuf_new_from_file("icons/icon16.png",NULL));
+	icons = g_list_prepend(icons,(gpointer)gdk_pixbuf_new_from_file("icons/icon32.png",NULL));
+	icons = g_list_prepend(icons,(gpointer)gdk_pixbuf_new_from_file("icons/icon48.png",NULL));
+	icons = g_list_prepend(icons,(gpointer)gdk_pixbuf_new_from_file("icons/icon128.png",NULL));
+	icons = g_list_prepend(icons,(gpointer)gdk_pixbuf_new_from_file("icons/icon256.png",NULL));
 
 	gtk_window_set_default_icon_list(icons);
 	gtk_widget_set_size_request(compoments->window,SSC_WINDOW_MINWIDTH,SSC_WINDOW_MINHEIGHT);
@@ -121,9 +126,10 @@ sscCompoments* ssc_widgets_init()
 
 	// CSS
 	GtkCssProvider* p = gtk_css_provider_new();
-	if (gtk_css_provider_load_from_path(p,"SSCWindow.css",NULL))
+	gtk_css_provider_load_from_path(p,"SSCWindow.css",&err);
+	if (!err)
 	{
-		ssc_widget_style(compoments->window,p);
+		gtk_container_forall(GTK_CONTAINER(compoments->window),(GtkCallback)ssc_widget_style,p);
 		print("[CSS] Successfully loaded css style.\n");
 	}else
 	{

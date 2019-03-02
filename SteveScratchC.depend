@@ -6,7 +6,7 @@
 
 1549678636 e:\programs\c\stevescratchc\src\ssc\interpreter\interpreter.h
 
-1551367772 source:e:\programs\c\stevescratchc\src\ssc\widget\topbarmenus.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\widget\topbarmenus.c
 	<gtk/gtk.h>
 	<glib/gi18n.h>
 	"topBarMenusFunction.h"
@@ -2913,22 +2913,20 @@
 1550052297 source:e:\programs\c\stevescratchc\src\ssc\widget\widgetevents.c
 	<gtk/gtk.h>
 
-1551438448 source:e:\programs\c\stevescratchc\src\ssc_libs.c
+1551532052 source:e:\programs\c\stevescratchc\src\ssc_libs.c
 	"ssc_libs.h"
 
-1551443091 e:\programs\c\stevescratchc\src\ssc_libs.h
+1551532126 e:\programs\c\stevescratchc\src\ssc_libs.h
 	<gtk/gtk.h>
-	<gdk/gdk.h>
-	<glib.h>
 	<glib/gi18n.h>
 	<cairo.h>
 
 1551365607 source:e:\programs\c\stevescratchc\src\main.rc
 	"version.h"
 
-1551236071 e:\programs\c\stevescratchc\src\version.h
+1551535095 e:\programs\c\stevescratchc\src\version.h
 
-1551093476 source:e:\programs\c\stevescratchc\src\ssc\block\block.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\block\block.c
 	"block.h"
 
 1551243122 e:\programs\c\stevescratchc\src\ssc\block\block.h
@@ -2944,7 +2942,7 @@
 	"shapeDraw/shapes.h"
 	"../ssc_specs.h"
 
-1551093518 e:\programs\c\stevescratchc\src\chineseencode.h
+1551531886 e:\programs\c\stevescratchc\src\chineseencode.h
 
 1549698478 e:\programs\c\stevescratchc\src\ssc\block\shapedraw\shapes.h
 	"cmd.h"
@@ -2989,7 +2987,7 @@
 	<stdio.h>
 	"lua.h"
 
-1551093518 source:e:\programs\c\stevescratchc\src\ssc\block\blockbase.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\block\blockbase.c
 	"blockBase.h"
 
 1549678636 source:e:\programs\c\stevescratchc\src\ssc\interpreter\thread.c
@@ -2998,28 +2996,28 @@
 1549687542 e:\programs\c\stevescratchc\src\ssc\interpreter\thread.h
 	"../block/block.h"
 
-1551367597 source:e:\programs\c\stevescratchc\src\ssc\block\shapedraw\num.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\block\shapedraw\num.c
 	"num.h"
 
-1551367772 source:e:\programs\c\stevescratchc\src\ssc\ssc_specs.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\ssc_specs.c
 	"ssc_specs.h"
 
-1551367772 source:e:\programs\c\stevescratchc\src\ssc\block\blockshape.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\block\blockshape.c
 	"blockShape.h"
 
-1551435357 source:e:\programs\c\stevescratchc\src\ssc\block\shapedraw\cmd.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\block\shapedraw\cmd.c
 	"cmd.h"
 
-1551367597 source:e:\programs\c\stevescratchc\src\ssc\block\shapedraw\hat.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\block\shapedraw\hat.c
 	"hat.h"
 
-1551243122 source:e:\programs\c\stevescratchc\src\ssc\scratch\scratchsprite.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\scratch\scratchsprite.c
 	"ScratchSprite.h"
 
 1551365764 e:\programs\c\stevescratchc\src\ssc\scratch\scratchsprite.h
 	"../../ssc_libs.h"
 
-1551367772 source:e:\programs\c\stevescratchc\src\ssc\lua\scheduler.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\lua\scheduler.c
 	"scheduler.h"
 
 1551365785 e:\programs\c\stevescratchc\src\ssc\lua\scheduler.h
@@ -3042,7 +3040,7 @@
 	<lualib.h>
 	<lauxlib.h>
 
-1551236694 source:e:\programs\c\stevescratchc\src\main.c
+1551531886 source:e:\programs\c\stevescratchc\src\main.c
 	"main.h"
 
 1551368483 e:\programs\c\stevescratchc\src\main.h
@@ -3132,10 +3130,10 @@
 1513835898 e:\msys64\mingw64\include\librsvg-2.0\librsvg\rsvg-cairo.h
 	<cairo.h>
 
-1551367616 source:e:\programs\c\stevescratchc\src\ssc\lua\classes\sscstage.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\lua\classes\sscstage.c
 	"SSCStage.h"
 
-1551243122 source:e:\programs\c\stevescratchc\src\ssc\lua\commandbar.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\lua\commandbar.c
 	"lua.h"
 	<string.h>
 	<stdlib.h>
@@ -3143,26 +3141,26 @@
 	<lualib.h>
 	<lauxlib.h>
 
-1551236694 source:e:\programs\c\stevescratchc\src\ssc\lua\lua.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\lua\lua.c
 	"lua.h"
 
-1551236694 source:e:\programs\c\stevescratchc\src\ssc\scratch\palettebuilder.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\scratch\palettebuilder.c
 	"PaletteBuilder.h"
 
-1551236694 source:e:\programs\c\stevescratchc\src\ssc\ssc_main.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\ssc_main.c
 	"ssc_main.h"
 
-1551367772 source:e:\programs\c\stevescratchc\src\ssc\stage\scratchstage.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\stage\scratchstage.c
 	"ScratchStage.h"
 
 1549867358 e:\programs\c\stevescratchc\src\ssc\stage\scratchstage.h
 	<gtk/gtk.h>
 	"../ssc_widgets.h"
 
-1551367597 source:e:\programs\c\stevescratchc\src\ssc\stage\stagerender.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\stage\stagerender.c
 	"stageRender.h"
 
-1551236694 source:e:\programs\c\stevescratchc\src\ssc\widget\topbarmenusfunction.c
+1551531886 source:e:\programs\c\stevescratchc\src\ssc\widget\topbarmenusfunction.c
 	<stdio.h>
 	<string.h>
 	<gtk/gtk.h>
@@ -3170,6 +3168,6 @@
 	"../../main.h"
 	"../../config.h"
 
-1551438860 source:e:\programs\c\stevescratchc\src\ssc\ssc_widgets.c
+1551535095 source:e:\programs\c\stevescratchc\src\ssc\ssc_widgets.c
 	"ssc_widgets.h"
 
