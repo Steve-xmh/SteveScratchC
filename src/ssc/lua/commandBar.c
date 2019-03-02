@@ -8,7 +8,7 @@
 void ssc_commandBar_activate(GtkWidget* bar,gpointer data)
 {
 	//print("DOSTRING\n");
-	const gchar* str = ssc_libs_gtk_entry_get_text(GTK_ENTRY(bar));
+	const gchar* str = gtk_entry_get_text(GTK_ENTRY(bar));
 
 	/*
 	gchar* memstr = calloc(strlen(str)+1,sizeof(gchar));

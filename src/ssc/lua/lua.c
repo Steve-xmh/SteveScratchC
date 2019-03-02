@@ -4,8 +4,8 @@
 */
 #include "lua.h"
 
-#define lgetEnd() ssc_libs_gtk_text_buffer_get_end_iter(consoleWidget,&end)
-#define lprint(s) ssc_libs_gtk_text_buffer_insert(consoleWidget,&end,s,-1) //ssc_libs_g_async_queue_push(sTunnel,s)
+#define lgetEnd() gtk_text_buffer_get_end_iter(consoleWidget,&end)
+#define lprint(s) gtk_text_buffer_insert(consoleWidget,&end,s,-1) //g_async_queue_push(sTunnel,s)
 
 GtkTextBuffer* consoleWidget = NULL;
 GtkTextView* consoleView = NULL;
@@ -17,22 +17,22 @@ GtkTextIter end;
 void ssc_lua_setOutput(GtkWidget* w)
 {
 	consoleView = GTK_TEXT_VIEW(w);
-    consoleWidget = ssc_libs_gtk_text_view_get_buffer(GTK_TEXT_VIEW(w));
+    consoleWidget = gtk_text_view_get_buffer(GTK_TEXT_VIEW(w));
     if (consoleWidget)
     {
 		/*
-        ssc_libs_gtk_text_buffer_create_tag (consoleWidget, "[LUA]",
+        gtk_text_buffer_create_tag (consoleWidget, "[LUA]",
                                     "weight", PANGO_WEIGHT_NORMAL,
                                     "foreground","blue",
                                     NULL,NULL);
 		*/
 
-        ssc_libs_gtk_text_buffer_get_end_iter(consoleWidget,&end);
-        error = ssc_libs_gtk_text_buffer_create_tag(consoleWidget,"err","foreground","red",NULL);
-        msg = ssc_libs_gtk_text_buffer_create_tag(consoleWidget,"msg","foreground","blue",NULL);
-        ssc_libs_gtk_text_buffer_insert_with_tags(consoleWidget,&end,SSC_FULLNAME,-1,msg,NULL);
-        ssc_libs_gtk_text_buffer_insert_with_tags(consoleWidget,&end,_(" Lua Console\nAll output from lua will be shown here.\n" LUA_COPYRIGHT "\n" LUA_AUTHORS "\n"),-1,msg,NULL);
-        mark = ssc_libs_gtk_text_buffer_create_mark(consoleWidget,"scroll",&end,TRUE);
+        gtk_text_buffer_get_end_iter(consoleWidget,&end);
+        error = gtk_text_buffer_create_tag(consoleWidget,"err","foreground","red",NULL);
+        msg = gtk_text_buffer_create_tag(consoleWidget,"msg","foreground","blue",NULL);
+        gtk_text_buffer_insert_with_tags(consoleWidget,&end,SSC_FULLNAME,-1,msg,NULL);
+        gtk_text_buffer_insert_with_tags(consoleWidget,&end,_(" Lua Console\nAll output from lua will be shown here.\n" LUA_COPYRIGHT "\n" LUA_AUTHORS "\n"),-1,msg,NULL);
+        mark = gtk_text_buffer_create_mark(consoleWidget,"scroll",&end,TRUE);
     }else{
 		consoleView = NULL;
 		print("WARNING: Console was no ready.\n");
@@ -65,7 +65,7 @@ int ssc_lua_wait(lua_State *L)
 		return 0;
 	}
     ssc_lua_enqueue_task(L,clock()+sec*CLOCKS_PER_SEC);
-	//ssc_libs_g_usleep(sec * 1000000);// 微秒还行
+	//g_usleep(sec * 1000000);// 微秒还行
 	return lua_yield(L,0);
 }
 
@@ -96,8 +96,8 @@ int ssc_lua_print(lua_State *L)
 	lprint("\n");
     print("\n");
 
-		ssc_libs_gtk_text_buffer_move_mark (consoleWidget, mark, &end);
-		ssc_libs_gtk_text_view_scroll_mark_onscreen(consoleView,mark);
+		gtk_text_buffer_move_mark (consoleWidget, mark, &end);
+		gtk_text_view_scroll_mark_onscreen(consoleView,mark);
 
     return 0;
 }
@@ -113,7 +113,7 @@ int ssc_lua_cls(lua_State *L)
 {
     if (consoleWidget)
 	{
-		ssc_libs_gtk_text_buffer_set_text(consoleWidget,"",0);
+		gtk_text_buffer_set_text(consoleWidget,"",0);
 	};
     return 0;
 };
@@ -147,9 +147,9 @@ int ssc_lua_msgBox(lua_State *L)
         return 0;
     }
     GtkWidget *msg;
-    msg = ssc_libs_gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_INFO,GTK_BUTTONS_OK,lua_tostring(L,1));
-    ssc_libs_gtk_dialog_run(GTK_DIALOG(msg));
-    ssc_libs_gtk_widget_destroy(msg);
+    msg = gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_INFO,GTK_BUTTONS_OK,lua_tostring(L,1));
+    gtk_dialog_run(GTK_DIALOG(msg));
+    gtk_widget_destroy(msg);
     return 0;
 };
 

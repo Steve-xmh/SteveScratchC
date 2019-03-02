@@ -13,6 +13,6 @@
  */
 
 //gchar* chChar(gchar*);
-#define chChar(str) ssc_libs_g_convert(str,-1,"UTF-8","GB2312",NULL,NULL,NULL)
+#define chChar(str) g_convert(str,-1,"UTF-8","GB2312",NULL,NULL,NULL)
 
 #endif // HEADER_CHINESEENCODE

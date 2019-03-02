@@ -17,9 +17,9 @@ void ssc_main_run()
 	ssc_running = TRUE;
 
 	do{
-		if(ssc_libs_gtk_events_pending())
-			ssc_libs_gtk_main_iteration();
+		if(gtk_events_pending())
+			gtk_main_iteration();
         ssc_lua_iteration();
 	}while(ssc_main_running());
-	//ssc_libs_gtk_main_quit();
+	//gtk_main_quit();
 }

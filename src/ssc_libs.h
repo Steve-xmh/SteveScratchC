@@ -13,18 +13,18 @@
 */
 
 
-void ssc_libs_ssc_libs_gtk_init(int* argc,char*** argv);
-gpointer ssc_libs_g_malloc(gsize n_bytes);
-gulong ssc_libs_g_signal_connect(gpointer a,const gchar *b,GCallback c,gpointer d);
-void ssc_libs_g_object_unref(gpointer a);
-void ssc_libs_gtk_widget_destroy(GtkWidget* w);
-void ssc_libs_gtk_widget_show_all(GtkWidget* w);
-GtkStyleContext* ssc_libs_gtk_widget_get_style_context(GtkWidget* w);
-GtkWidget* ssc_libs_gtk_drawing_area_new(void);
-GdkWindow* ssc_libs_gtk_widget_get_window(GtkWidget* w);
-void ssc_libs_cairo_move_to(cairo_t *C,double x,double y);
-void ssc_libs_cairo_line_to(cairo_t *C,double x,double y);
-void ssc_libs_gtk_render_background();
+void gtk_init(int* argc,char*** argv);
+gpointer g_malloc(gsize n_bytes);
+gulong g_signal_connect(gpointer a,const gchar *b,GCallback c,gpointer d);
+void g_object_unref(gpointer a);
+void gtk_widget_destroy(GtkWidget* w);
+void gtk_widget_show_all(GtkWidget* w);
+GtkStyleContext* gtk_widget_get_style_context(GtkWidget* w);
+GtkWidget* gtk_drawing_area_new(void);
+GdkWindow* gtk_widget_get_window(GtkWidget* w);
+void cairo_move_to(cairo_t *C,double x,double y);
+void cairo_line_to(cairo_t *C,double x,double y);
+void gtk_render_background();
 
 #endif // HEADER_SSC_LIBS
 

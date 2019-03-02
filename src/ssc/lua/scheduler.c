@@ -14,10 +14,10 @@ sscLuaTask* ssc_lua_get_cur_task()
 
 void ssc_lua_enqueue_task(lua_State* L,clock_t ct)
 {
-	sscLuaTask* task = ssc_libs_g_malloc(sizeof(sscLuaTask));
+	sscLuaTask* task = g_malloc(sizeof(sscLuaTask));
 	task->coro = L;
 	task->time = ct;
-	sscLuaTasksList = ssc_libs_g_list_sort(ssc_libs_g_list_prepend(sscLuaTasksList,task),ssc_lua_sort_task);
+	sscLuaTasksList = g_list_sort(g_list_prepend(sscLuaTasksList,task),ssc_lua_sort_task);
 	//print("[Lua][Scheduler] Added new task: %p\tWill call at %d\n",L,ct);
 }
 
@@ -25,14 +25,14 @@ void ssc_lua_iteration()
 {
     clock_t now = clock();
     //print("[Lua][Scheduler] Task length: %d\n",g_list_length(sscLuaTasksList));
-    if(ssc_libs_g_list_length(sscLuaTasksList) != 0)
+    if(g_list_length(sscLuaTasksList) != 0)
 	{
 		curTask = (sscLuaTask*)(sscLuaTasksList->data);
 		//print("[Lua][Scheduler] %d \t %d\n",curTask->time,now);
 		if(curTask->time <= now)
 		{
             int ret;
-            sscLuaTasksList = ssc_libs_g_list_remove(sscLuaTasksList,curTask); // 只是移除链接而已
+            sscLuaTasksList = g_list_remove(sscLuaTasksList,curTask); // 只是移除链接而已
             //print("[Lua][Scheduler] Runing task: %p\n",curTask->coro);
             ret = lua_resume(curTask->coro,NULL,0);
             if (ret == LUA_OK) // 完美结束
@@ -89,14 +89,14 @@ void ssc_lua_iteration()
 				}
 				print(lua_tostring(curTask->coro,-1));
 			}// 如果还是让除了的话则不动，因为等待函数已经重新指示排队了
-			ssc_libs_g_free(curTask); // 释放任务结构，但是某种情况下没有关闭状态机
+			g_free(curTask); // 释放任务结构，但是某种情况下没有关闭状态机
 		}
 	}
 }
 
 void ssc_lua_sort_now()
 {
-	sscLuaTasksList = ssc_libs_g_list_sort(sscLuaTasksList,ssc_lua_sort_task);
+	sscLuaTasksList = g_list_sort(sscLuaTasksList,ssc_lua_sort_task);
 }
 
 gint ssc_lua_sort_task(gpointer pa,gpointer pb)

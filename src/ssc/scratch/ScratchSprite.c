@@ -3,7 +3,7 @@
 sscScratchSprite* ssc_scratch_sprite_new(gchar* name)
 {
     sscScratchSprite *ns;
-    ns = (sscScratchSprite*)ssc_libs_g_malloc(sizeof(sscScratchSprite));
+    ns = (sscScratchSprite*)g_malloc(sizeof(sscScratchSprite));
 
 	if(!ns)
 	{

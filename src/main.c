@@ -6,8 +6,8 @@ int main(int argc, char *argv[])
     langSetup();
     print("Running SteveScratchC!\n");
     // GTK 初始化
-    ssc_libs_ssc_libs_gtk_init(&argc,&argv);
-    //if(ssc_libs_g_thread_supported()) g_thread_init(NULL); //多线程
+    gtk_init(&argc,&argv);
+    //if(g_thread_supported()) g_thread_init(NULL); //多线程
     //gdk_threads_init();
 	print("%d\n",sizeof(sscBlockShape));
     print("Using GTK+ version: %d.%d.%d\n",GTK_MAJOR_VERSION,GTK_MINOR_VERSION,GTK_MICRO_VERSION);
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     print("Components ready\n");
 
 	//gdk_threads_enter();
-    //ssc_libs_ssc_libs_gtk_main();
+    //gtk_main();
 
 	ssc_main_run();
 
