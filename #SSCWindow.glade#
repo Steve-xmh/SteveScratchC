@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <!-- interface-css-provider-path SSCWindow.css -->
+  <object class="GtkEntryBuffer" id="entrybuffer1">
+    <property name="text" translatable="yes">100</property>
+  </object>
+  <object class="GtkEntryBuffer" id="entrybuffer2">
+    <property name="text" translatable="yes">90</property>
+  </object>
+  <object class="GtkPopover" id="popover1">
+    <property name="can_focus">False</property>
+    <property name="position">right</property>
+    <child>
+      <object class="GtkButtonBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_left">5</property>
+        <property name="margin_right">5</property>
+        <property name="margin_top">5</property>
+        <property name="margin_bottom">5</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
+        <property name="layout_style">start</property>
+        <child>
+          <object class="GtkButton" id="ssc-pop1-upload">
+            <property name="label" translatable="yes">Upload</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="ssc-pop1-paint">
+            <property name="label" translatable="yes">Paint</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkPopover" id="popover2">
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkButtonBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_left">5</property>
+        <property name="margin_right">5</property>
+        <property name="margin_top">5</property>
+        <property name="margin_bottom">5</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
+        <property name="layout_style">start</property>
+        <child>
+          <object class="GtkButton" id="ssc-pop2-upload">
+            <property name="label" translatable="yes">Upload</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="ssc-pop2-paint">
+            <property name="label" translatable="yes">Paint</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer1"/>
+  <object class="GtkWindow" id="mainWindow">
+    <property name="can_focus">False</property>
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="ssc-header-bar">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="title" translatable="yes">SteveScratchC</property>
+        <property name="subtitle" translatable="yes">新的工程</property>
+        <property name="show_close_button">True</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkImage" id="ssc-window-icon">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="icon_size">6</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkMenuBar">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkMenuItem">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">文件(_F)</property>
+                    <property name="use_underline">True</property>
+                    <child type="submenu">
+                      <object class="GtkMenu">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-new">
+                            <property name="label">gtk-new</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-open">
+                            <property name="label">gtk-open</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-save">
+                            <property name="label">gtk-save</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-save-as">
+                            <property name="label">gtk-save-as</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkSeparatorMenuItem">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-quit">
+                            <property name="label">gtk-quit</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkMenuItem">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">编辑(_E)</property>
+                    <property name="use_underline">True</property>
+                    <child type="submenu">
+                      <object class="GtkMenu">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-cut">
+                            <property name="label">gtk-cut</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-copy">
+                            <property name="label">gtk-copy</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-paste">
+                            <property name="label">gtk-paste</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-delete">
+                            <property name="label">gtk-delete</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkMenuItem">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">帮助(_H)</property>
+                    <property name="use_underline">True</property>
+                    <child type="submenu">
+                      <object class="GtkMenu">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkImageMenuItem" id="ssc-menu-about">
+                            <property name="label">gtk-about</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkOverlay" id="ssc-overlay">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkBox" id="MainFrame">
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">5</property>
+            <property name="margin_right">5</property>
+            <property name="margin_top">5</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="spacing">5</property>
+                <child>
+                  <object class="GtkNotebook" id="ssc-notebook">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkNotebook" id="ssc-notebook-blocks">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tab_pos">left</property>
+                            <property name="scrollable">True</property>
+                            <property name="enable_popup">True</property>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child type="tab">
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child type="tab">
+                              <placeholder/>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                            <child type="tab">
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkScrolledWindow" id="ssc-code-area-sw">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="shadow_type">in</property>
+                            <child>
+                              <object class="GtkViewport">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <child>
+                                  <object class="GtkFixed" id="ssc-code-area">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                    </child>
+                    <child type="tab">
+                      <object class="GtkLabel" id="notebook-code1">
+                        <property name="can_focus">False</property>
+                        <property name="label">代码</property>
+                      </object>
+                      <packing>
+                        <property name="tab_fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkScrolledWindow">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="shadow_type">in</property>
+                                <property name="propagate_natural_width">True</property>
+                                <child>
+                                  <object class="GtkViewport">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="orientation">vertical</property>
+                                        <child>
+                                          <object class="GtkToggleButton" id="ssc-costume-button">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <child>
+                                              <object class="GtkBox">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="orientation">vertical</property>
+                                                <child>
+                                                  <object class="GtkDrawingArea">
+                                                    <property name="width_request">50</property>
+                                                    <property name="height_request">50</property>
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">False</property>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">True</property>
+                                                    <property name="position">1</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <object class="GtkLabel">
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">False</property>
+                                                    <property name="label" translatable="yes">造型1</property>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">True</property>
+                                                    <property name="position">2</property>
+                                                  </packing>
+                                                </child>
+                                              </object>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <placeholder/>
+                                        </child>
+                                        <child>
+                                          <placeholder/>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButtonBox">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="homogeneous">True</property>
+                            <property name="layout_style">expand</property>
+                            <child>
+                              <object class="GtkButton" id="ssc-costume-upload-button">
+                                <property name="label" translatable="yes">从文件加载</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                              </object>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="ssc-costume-delete-button">
+                                <property name="label" translatable="yes">删除</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                              </object>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="ssc-costume-button-1">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                              </object>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child type="tab">
+                      <object class="GtkLabel" id="notebook-costume1">
+                        <property name="can_focus">False</property>
+                        <property name="label">造型</property>
+                      </object>
+                      <packing>
+                        <property name="position">1</property>
+                        <property name="tab_fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkScrolledWindow">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="hscrollbar_policy">never</property>
+                            <property name="shadow_type">in</property>
+                            <child>
+                              <object class="GtkViewport">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="hscroll_policy">natural</property>
+                                <child>
+                                  <object class="GtkFlowBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <child>
+                                      <object class="GtkFlowBoxChild">
+                                        <property name="width_request">100</property>
+                                        <property name="height_request">80</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">button</property>
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child type="tab">
+                      <object class="GtkLabel" id="notebook-sound1">
+                        <property name="can_focus">False</property>
+                        <property name="label">声音</property>
+                      </object>
+                      <packing>
+                        <property name="position">2</property>
+                        <property name="tab_fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkScrolledWindow" id="ssc-console-sw">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="shadow_type">in</property>
+                        <child>
+                          <object class="GtkTextView" id="ssc-console-tv">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="hscroll_policy">natural</property>
+                            <property name="vscroll_policy">natural</property>
+                            <property name="editable">False</property>
+                            <property name="buffer">textbuffer1</property>
+                            <property name="monospace">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child type="tab">
+                      <object class="GtkLabel" id="notebook-console1">
+                        <property name="can_focus">False</property>
+                        <property name="label">控制台</property>
+                      </object>
+                      <packing>
+                        <property name="position">3</property>
+                        <property name="tab_fill">False</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">5</property>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">5</property>
+                        <child>
+                          <object class="GtkButtonBox">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="layout_style">start</property>
+                            <child>
+                              <object class="GtkButton">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="relief">none</property>
+                                <child>
+                                  <object class="GtkImage" id="ssc-stage-play">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="stock">gtk-media-play</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                                <property name="non_homogeneous">True</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="ssc-stage-stop">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="relief">none</property>
+                                <child>
+                                  <object class="GtkImage">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="stock">gtk-media-stop</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
+                                <property name="non_homogeneous">True</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkButton">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="relief">none</property>
+                                <child>
+                                  <object class="GtkImage" id="ssc-stage-fullscreen">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="stock">gtk-fullscreen</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="position">2</property>
+                                <property name="secondary">True</property>
+                                <property name="non_homogeneous">True</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLayout" id="ssc-stage">
+                            <property name="width_request">480</property>
+                            <property name="height_request">320</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="width">480</property>
+                            <property name="height">320</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="spacing">5</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">5</property>
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">5</property>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">5</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="spacing">5</property>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <child>
+                                          <object class="GtkLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="label" translatable="yes">角色</property>
+                                            <property name="width_chars">5</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ssc-scratch-name">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="max_width_chars">16</property>
+                                            <property name="text" translatable="yes">角色1</property>
+                                            <property name="truncate_multiline">True</property>
+                                            <property name="placeholder_text" translatable="yes">名字</property>
+                                            <property name="input_purpose">name</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">True</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <child>
+                                          <object class="GtkLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="label" translatable="yes">X</property>
+                                            <property name="width_chars">5</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ssc-scratch-pos-x">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="width_chars">4</property>
+                                            <property name="max_width_chars">4</property>
+                                            <property name="text" translatable="yes">0</property>
+                                            <property name="truncate_multiline">True</property>
+                                            <property name="placeholder_text" translatable="yes">X</property>
+                                            <property name="input_purpose">number</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <child>
+                                          <object class="GtkLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="label" translatable="yes">Y</property>
+                                            <property name="width_chars">5</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ssc-scratch-pos-y">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="width_chars">4</property>
+                                            <property name="max_width_chars">4</property>
+                                            <property name="text" translatable="yes">0</property>
+                                            <property name="truncate_multiline">True</property>
+                                            <property name="placeholder_text" translatable="yes">Y</property>
+                                            <property name="input_purpose">number</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="spacing">5</property>
+                                    <property name="homogeneous">True</property>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <child>
+                                          <object class="GtkLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="label" translatable="yes">显示</property>
+                                            <property name="width_chars">5</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkSwitch" id="ssc-scratch-show">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="halign">center</property>
+                                            <property name="valign">center</property>
+                                            <property name="active">True</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <child>
+                                          <object class="GtkLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="label" translatable="yes">大小</property>
+                                            <property name="width_chars">5</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ssc-scratch-size">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="buffer">entrybuffer1</property>
+                                            <property name="width_chars">8</property>
+                                            <property name="max_width_chars">8</property>
+                                            <property name="truncate_multiline">True</property>
+                                            <property name="placeholder_text" translatable="yes">X</property>
+                                            <property name="input_purpose">number</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <child>
+                                          <object class="GtkLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="label" translatable="yes">方向</property>
+                                            <property name="width_chars">5</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ssc-scratch-direction">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="buffer">entrybuffer2</property>
+                                            <property name="width_chars">8</property>
+                                            <property name="max_width_chars">8</property>
+                                            <property name="truncate_multiline">True</property>
+                                            <property name="placeholder_text" translatable="yes">Y</property>
+                                            <property name="input_purpose">number</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkSeparator">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkScrolledWindow">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="hscrollbar_policy">never</property>
+                                <property name="shadow_type">in</property>
+                                <child>
+                                  <object class="GtkViewport">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="hscroll_policy">natural</property>
+                                    <child>
+                                      <object class="GtkFlowBox" id="ssc-sprite-list">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="homogeneous">True</property>
+                                        <property name="row_spacing">5</property>
+                                        <property name="max_children_per_line">3</property>
+                                        <child>
+                                          <object class="GtkFlowBoxChild">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="halign">center</property>
+                                            <property name="valign">start</property>
+                                            <child>
+                                              <object class="GtkButton">
+                                                <property name="width_request">64</property>
+                                                <property name="height_request">64</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="receives_default">True</property>
+                                                <property name="halign">start</property>
+                                                <property name="valign">start</property>
+                                                <child>
+                                                  <object class="GtkBox">
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">False</property>
+                                                    <property name="orientation">vertical</property>
+                                                    <child>
+                                                      <object class="GtkDrawingArea">
+                                                        <property name="width_request">64</property>
+                                                        <property name="height_request">64</property>
+                                                        <property name="visible">True</property>
+                                                        <property name="app_paintable">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="halign">start</property>
+                                                        <property name="valign">start</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="expand">False</property>
+                                                        <property name="fill">True</property>
+                                                        <property name="position">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkLabel">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="label" translatable="yes">Sprite1
+</property>
+                                                        <property name="ellipsize">end</property>
+                                                        <property name="single_line_mode">True</property>
+                                                        <property name="max_width_chars">8</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="expand">False</property>
+                                                        <property name="fill">True</property>
+                                                        <property name="position">1</property>
+                                                      </packing>
+                                                    </child>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkFlowBoxChild">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="halign">center</property>
+                                            <property name="valign">start</property>
+                                            <child>
+                                              <placeholder/>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkFlowBoxChild">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="halign">center</property>
+                                            <property name="valign">start</property>
+                                            <child>
+                                              <placeholder/>
+                                            </child>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <object class="GtkMenuButton">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="direction">left</property>
+                                <property name="popover">popover2</property>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="label" translatable="yes">Stage</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="pack_type">end</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkToggleButton" id="ssc-scratch-stage">
+                                <property name="width_request">64</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="orientation">vertical</property>
+                                    <child>
+                                      <object class="GtkDrawingArea">
+                                        <property name="width_request">64</property>
+                                        <property name="height_request">64</property>
+                                        <property name="visible">True</property>
+                                        <property name="app_paintable">True</property>
+                                        <property name="can_focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="label" translatable="yes">舞台</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkMenuButton">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="direction">left</property>
+                                <property name="popover">popover1</property>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="label" translatable="yes">Sprite</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="pack_type">end</property>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="ssc-command-bar">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_bottom">5</property>
+                <property name="truncate_multiline">True</property>
+                <property name="placeholder_text" translatable="yes">Lua 指令栏</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="index">-1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
