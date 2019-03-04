@@ -10,6 +10,7 @@
 			<Script file="lib_finder.script" />
 			<Target title="Debug-w64">
 				<Option output="bin/Debug-w64/bin/SteveScratchC" prefix_auto="1" extension_auto="1" />
+<<<<<<< HEAD
 				<Option object_output="obj/Debug-w64/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -33,10 +34,35 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+=======
+				<Option working_dir="bin/Debug-w64/bin" />
+				<Option object_output="obj/Debug-w64/" />
+				<Option type="1" />
+				<Option compiler="msys2_gnu_gcc_compiler_x64" />
+				<Compiler>
+					<Add option="-Og" />
+					<Add option="-g" />
+					<Add option="-DWINDOWS" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="Release-w64">
+				<Option output="bin/Release-w64/bin/SteveScratchC" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Release-w64/bin" />
+				<Option object_output="obj/Release-w64/" />
+				<Option type="0" />
+				<Option compiler="msys2_gnu_gcc_compiler_x64" />
+				<Compiler>
+					<Add option="-m64" />
+>>>>>>> 2b60f74febaeb7bc9a5a32d05bb84749bdab7ab1
 					<Add option="-DWINDOWS" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+<<<<<<< HEAD
+=======
+					<Add option="-m64" />
+>>>>>>> 2b60f74febaeb7bc9a5a32d05bb84749bdab7ab1
 				</Linker>
 			</Target>
 		</Build>
@@ -116,6 +142,13 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/ssc/scratch/ScratchSprite.h" />
+<<<<<<< HEAD
+=======
+		<Unit filename="src/ssc/scratch/editingScObj.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/scratch/editingScObj.h" />
+>>>>>>> 2b60f74febaeb7bc9a5a32d05bb84749bdab7ab1
 		<Unit filename="src/ssc/ssc_main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -154,7 +187,17 @@
 		<Unit filename="src/ssc_libs.h" />
 		<Unit filename="src/version.h" />
 		<Extensions>
+<<<<<<< HEAD
 			<code_completion />
+=======
+			<code_completion>
+				<search_path add="E:\msys64\mingw64\include\librsvg-2.0" />
+				<search_path add="E:\msys64\mingw64\include" />
+				<search_path add="E:\msys64\mingw64\include\gtk-3.0" />
+				<search_path add="E:\msys64\mingw64\include\cairo" />
+				<search_path add="E:\msys64\mingw64\include\glib-2.0" />
+			</code_completion>
+>>>>>>> 2b60f74febaeb7bc9a5a32d05bb84749bdab7ab1
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1">
@@ -163,6 +206,15 @@
 				<lib name="cairo" />
 				<lib name="librsvg-2.0" />
 			</lib_finder>
+<<<<<<< HEAD
+=======
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" use_define="1" update_manifest="0" do_auto_increment="1" ask_to_increment="0" language="C" svn="0" svn_directory="" header_path="src\version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="SSC_VER" />
+			</AutoVersioning>
+>>>>>>> 2b60f74febaeb7bc9a5a32d05bb84749bdab7ab1
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
