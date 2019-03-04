@@ -40,6 +40,7 @@ void ssc_topBar_clicked(GtkWidget* widget,gpointer data)
 			gtk_about_dialog_set_logo(d,icon);
 		}
 		gtk_about_dialog_set_comments(d,_("一个由 C 语言编写而成的 Scratch 编辑器。\n"));
+		//gtk_about_dialog_set_comments(d,_("This program is free software: you can redistribute it and/or modify\n it under the terms of the GNU General Public License as published by\n the Free Software Foundation, either version 3 of the License, or\n (at your option) any later version.\n"));
 		gtk_about_dialog_set_website(d,"https://steve-xmh.github.io/SSCDoc/");
 		gtk_about_dialog_set_website_label(d,_("SSC 文档"));
 		gtk_about_dialog_set_copyright(d,SSC_COPYRIGHT);
