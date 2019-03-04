@@ -1,7 +1,0 @@
-#ifndef HEADER_SSC_WIDGET_TOPBARMENUSFUNCTION
-#define HEADER_SSC_WIDGET_TOPBARMENUSFUNCTION
-
-#include <gtk/gtk.h>
-void ssc_topBar_clicked(GtkWidget*,gpointer);
-
-#endif // HEADER_SSC_WIDGET_TOPBARMENUSFUNCTION

@@ -1,40 +1,10 @@
-#ifndef MAIN
-#define MAIN
+/*
+ * main.h/main.c
+ * 程序最先启动的地方
+ * 需要初始化模块请将你的初始化函数放入 ssc_init 函数中
+ */
 
-#include "ssc_libs.h"
-#include "version.h"
+#ifndef HEADER_MAIN
+#define HEADER_MAIN
 
-#ifdef WINDOWS
-#define OS
-#endif // WINDOWS
-#ifdef UNIX
-#define OS
-#endif // UNIX
-#ifdef OSX
-#define OS
-#endif // OSX
-
-#ifndef OS
-#error Please define least one of these: WINDOWS,UNIX,OSX
-#endif // OS
-
-#include <stdio.h>
-#include <string.h>
-
-//Lua
-#include <lua.h>
-#include <lualib.h>
-#include <lauxlib.h>
-lua_State *luaP;
-
-//#define GETTEXT_PACKAGE "foo-app" LOCALEDIR "mo"
-#include <locale.h>
-#include "config.h" //所有宏配置在这里
-#define LOCALEDIR "share/locale"
-#include "ssc/ssc_main.h"
-
-struct sscCompoments* SSCComponents;
-
-void signalHandle(int id);
-
-#endif // MAIN
+#endif
