@@ -1,5 +1,20 @@
 .vscode
 bin
 obj
+<<<<<<< HEAD
 .cbp
 SSCWindow.glade~
+=======
+<<<<<<< HEAD
+#SSCWindow.glade#
+SSCWindow.glade~
+SteveScratchC.layout
+SteveScratchC.cbp
+#SSCWindow.glade#
+SteveScratchC.layout
+*.layout
+SteveScratchC.layout
+=======
+.cbp
+>>>>>>> master
+>>>>>>> 7e335b738fb3b22e5ab1e640ba8c75bcfea6d46a
