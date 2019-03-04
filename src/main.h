@@ -7,6 +7,6 @@
 #ifndef HEADER_MAIN
 #define HEADER_MAIN
 
-int ssc_init(void);
+int ssc_init(void); /** SteveScratchC 初始化函数 */
 
 #endif
