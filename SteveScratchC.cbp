@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SteveScratchC" />
+		<Option makefile="makefile" />
+		<Option pch_mode="2" />
+		<Option compiler="msys2_gnu_gcc_compiler_x64" />
+		<Build>
+			<Script file="lib_finder.script" />
+			<Target title="Debug-w64">
+				<Option output="bin/Debug-w64/bin/SteveScratchC" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Debug-w64/bin" />
+				<Option object_output="obj/Debug-w64/" />
+				<Option type="1" />
+				<Option compiler="msys2_gnu_gcc_compiler_x64" />
+				<Compiler>
+					<Add option="-Og" />
+					<Add option="-g" />
+					<Add option="-DWINDOWS" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="Release-w64">
+				<Option output="bin/Release-w64/bin/SteveScratchC" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Release-w64/bin" />
+				<Option object_output="obj/Release-w64/" />
+				<Option type="0" />
+				<Option compiler="msys2_gnu_gcc_compiler_x64" />
+				<Compiler>
+					<Add option="-m64" />
+					<Add option="-DWINDOWS" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-m64" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="genClosure.lua" />
+		<Unit filename="src/chineseEncode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/config.h" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.h" />
+		<Unit filename="src/main.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="src/ssc/block/block.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/block.h" />
+		<Unit filename="src/ssc/block/blockBase.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/blockBase.h" />
+		<Unit filename="src/ssc/block/blockShape.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/blockShape.h" />
+		<Unit filename="src/ssc/block/shapeDraw/cmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/shapeDraw/cmd.h" />
+		<Unit filename="src/ssc/block/shapeDraw/hat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/shapeDraw/hat.h" />
+		<Unit filename="src/ssc/block/shapeDraw/num.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/block/shapeDraw/num.h" />
+		<Unit filename="src/ssc/block/shapeDraw/shapes.h" />
+		<Unit filename="src/ssc/interpreter/Interpreter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/interpreter/Interpreter.h" />
+		<Unit filename="src/ssc/interpreter/Thread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/interpreter/Thread.h" />
+		<Unit filename="src/ssc/lua/classes/SSCBlock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/classes/SSCBlock.h" />
+		<Unit filename="src/ssc/lua/classes/SSCStage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/classes/SSCStage.h" />
+		<Unit filename="src/ssc/lua/commandBar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/commandBar.h" />
+		<Unit filename="src/ssc/lua/lua.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/lua.h" />
+		<Unit filename="src/ssc/lua/scheduler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/lua/scheduler.h" />
+		<Unit filename="src/ssc/scratch/PaletteBuilder.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/scratch/PaletteBuilder.h" />
+		<Unit filename="src/ssc/scratch/ScratchSprite.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/scratch/ScratchSprite.h" />
+		<Unit filename="src/ssc/scratch/editingScObj.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/scratch/editingScObj.h" />
+		<Unit filename="src/ssc/ssc_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/ssc_main.h" />
+		<Unit filename="src/ssc/ssc_specs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/ssc_specs.h" />
+		<Unit filename="src/ssc/ssc_widgets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/ssc_widgets.h" />
+		<Unit filename="src/ssc/stage/ScratchStage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/stage/ScratchStage.h" />
+		<Unit filename="src/ssc/stage/stageRender.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/stage/stageRender.h" />
+		<Unit filename="src/ssc/widget/topBarMenus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/widget/topBarMenus.h" />
+		<Unit filename="src/ssc/widget/topBarMenusFunction.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/widget/topBarMenusFunction.h" />
+		<Unit filename="src/ssc/widget/widgetEvents.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc/widget/widgetEvents.h" />
+		<Unit filename="src/ssc_libs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ssc_libs.h" />
+		<Unit filename="src/version.h" />
+		<Extensions>
+			<code_completion>
+				<search_path add="E:\msys64\mingw64\include\librsvg-2.0" />
+				<search_path add="E:\msys64\mingw64\include" />
+				<search_path add="E:\msys64\mingw64\include\gtk-3.0" />
+				<search_path add="E:\msys64\mingw64\include\cairo" />
+				<search_path add="E:\msys64\mingw64\include\glib-2.0" />
+			</code_completion>
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1">
+				<lib name="lua5.3" />
+				<lib name="gtk+-3.0" />
+				<lib name="cairo" />
+				<lib name="librsvg-2.0" />
+			</lib_finder>
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" use_define="1" update_manifest="0" do_auto_increment="1" ask_to_increment="0" language="C" svn="0" svn_directory="" header_path="src\version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="SSC_VER" />
+			</AutoVersioning>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

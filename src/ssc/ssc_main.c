@@ -15,7 +15,6 @@ gboolean ssc_main_running()
 void ssc_main_run()
 {
 	ssc_running = TRUE;
-
 	do{
 		if(gtk_events_pending())
 			gtk_main_iteration();
