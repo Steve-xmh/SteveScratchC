@@ -1,3 +1,9 @@
 .vscode
 bin
 obj
+#SSCWindow.glade#
+SSCWindow.glade~
+SteveScratchC.layout
+SteveScratchC.cbp
+#SSCWindow.glade#
+SteveScratchC.layout
