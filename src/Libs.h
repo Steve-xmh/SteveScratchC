@@ -7,7 +7,14 @@
 #ifndef HEADER_LIBS
 #define HEADER_LIBS
 
+// GTK+ 3.0
+// 禁止使用已弃用的模块
+#define GTK_DISABLE_DEPRECATED
 #include <gtk/gtk.h>
+
+// Lua
 #include <lua.h>
+#include <lualib.h>
+#include <lauxlib.h>
 
 #endif
