@@ -31,7 +31,17 @@ typedef struct SSCScratchObj
 	GPtrArray *costumes;			/** 对象的名称 */
 	GPtrArray *currentCostumeIndex;	/** 对象的名称 */
 	gdouble volume;					/** 对象音量 */
-	guint instrument;				/** 对象的名称 */
-} SSCScratchObj;					/** 对象的名称 */
+	guint instrument;				/** 对象使用的乐器 */
+	// 分割线 ---------------
+	GPtrArray localVariables;		/** 对象的局部变量，针对角色克隆体使用 */
+	GPtrArray localLists;			/** 对象的局部链表，针对角色克隆体使用 */
+} SSCScratchObj;					/** ScratchObj 对象 */
+
+typedef struct SSCScratchObjClass
+{
+	GObject parent_class;
+}
+
+G_DEFINE_TYPE(SSCSCratchObj,ssc_scratch_obj,G_TYPE_OBJECT);
 
 #endif // HEADER_SSC_CORE_SCRATCHOBJ
