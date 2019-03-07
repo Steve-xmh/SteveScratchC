@@ -18,7 +18,7 @@ static void ssc_scratch_obj_init(SSCScratchObj *s)
     s->localLists = g_ptr_array_new();
 }
 
-static void ssc_scratch_obj_class_init(SSCStringClass *self)
+static void ssc_scratch_obj_class_init(SSCStringClass *s)
 {
 
 }
