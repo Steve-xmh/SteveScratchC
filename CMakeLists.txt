@@ -14,10 +14,15 @@ set(PROJECT_DIR
     src/ssc/core/scratch
 )
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
-include_directories(${GTK3_INCLUDE_DIRS})
-link_directories(${GTK3_LIBRARY_DIRS})
+#find_package(PkgConfig REQUIRED)
+#pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
+#link_directories(${GTK3_LIBRARY_DIRS})
+
+find_package(GTK REQUIRED)
+find_package(Lua REQUIRED)
+
+#link_directories(${GTK_LIBRARIES} ${LUA_LIBRARIES})
+include_directories(${GTK_INCLUDE_DIR} ${LUA_INCLUDE_DIR})
 
 foreach(DIR ${PROJECT_DIR})
     aux_source_directory(${DIR} TEMP_VAR)
@@ -37,5 +42,4 @@ if (CMAKE_BUILD_TYPE MATCHES "Debug")
 endif(CMAKE_BUILD_TYPE MATCHES "Debug")
 
 add_executable(SteveScratchC ${SOURCE_FILE})
-add_definitions (${GTK3_CFLAGS_OTHER})
-target_link_libraries (SteveScratchC ${GTK3_LIBRARIES})
+target_link_libraries(SteveScratchC ${GTK_LIBRARIES} ${LUA_LIBRARIES})
