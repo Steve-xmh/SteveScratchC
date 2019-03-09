@@ -16,9 +16,20 @@ static void ssc_scratch_obj_init(SSCScratchObj *s)
 
     s->localVariables = g_ptr_array_new();
     s->localLists = g_ptr_array_new();
+    
+    print("Created one new ScObj!\n");
 }
 
-static void ssc_scratch_obj_class_init(SSCStringClass *s)
+static void ssc_scratch_obj_class_init(SSCScratchObjClass *s)
 {
 
 }
+/**
+ * \return
+ * 
+ */
+static SSCScratchObj* ssc_scratch_obj_new()
+{
+    return (SSCScratchObj*)g_object_new(SSC_SCRATCH_OBJ_TYPE,NULL);
+}
+

@@ -7,6 +7,21 @@
 #ifndef HEADER_LIBS
 #define HEADER_LIBS
 
+// printf 转换
+#ifdef DEBUG
+#define print(...) printf(__VA_ARGS__)
+#define info(...) printf("[SSC][Info] " __VA_ARGS__)
+#define warn(...) printf("[SSC][Warn] " __VA_ARGS__)
+#define error(...) printf("[SSC][Error] " __VA_ARGS__)
+#else
+#define print(...)
+#define info(...)
+#define warn(...)
+#define error(...)
+#endif
+
+#include <stdio.h>
+
 // GTK+ 3.0
 // 禁止使用已弃用的模块
 #define GTK_DISABLE_DEPRECATED

@@ -7,6 +7,8 @@
 #ifndef HEADER_MAIN
 #define HEADER_MAIN
 
+#include "Libs.h"
+
 int ssc_init(void); /** SteveScratchC 初始化函数 */
 
 #endif
