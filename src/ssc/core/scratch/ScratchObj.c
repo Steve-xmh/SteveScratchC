@@ -1,5 +1,7 @@
 #include "ScratchObj.h"
 
+G_DEFINE_TYPE(SSCScratchObj, ssc_scratch_obj, G_TYPE_OBJECT);
+
 static void ssc_scratch_obj_init(SSCScratchObj *s)
 {
     s->objName = NULL;
@@ -24,10 +26,7 @@ static void ssc_scratch_obj_class_init(SSCScratchObjClass *s)
 {
 
 }
-/**
- * \return
- * 
- */
+
 static SSCScratchObj* ssc_scratch_obj_new()
 {
     return (SSCScratchObj*)g_object_new(SSC_SCRATCH_OBJ_TYPE,NULL);

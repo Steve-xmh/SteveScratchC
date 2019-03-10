@@ -42,7 +42,7 @@ typedef struct SSCScratchObjClass
 	GObject parent_class;
 } SSCScratchObjClass;
 
-G_DEFINE_TYPE(SSCScratchObj, ssc_scratch_obj, G_TYPE_OBJECT);
+
 
 #define SSC_SCRATCH_OBJ_TYPE (ssc_scratch_obj_get_type())
 #define SSC_SCRATCH_OBJ(obj) (G_TYPE_CHECK_INSTANCE_CAST((obj), SSC_SCRATCH_OBJ_TYPE, SSCScratchObj))

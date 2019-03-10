@@ -9,9 +9,9 @@
 
 // printf 转换
 #ifdef DEBUG
-#define print(...) printf(__VA_ARGS__)
-#define info(...) printf("[SSC][Info] " __VA_ARGS__)
-#define warn(...) printf("[SSC][Warn] " __VA_ARGS__)
+#define print(...) printf(__VA_ARGS__) // 日常输出
+#define info(...) printf("[SSC][Info] " __VA_ARGS__) // 信息
+#define warn(...) printf("[SSC][Warn] " __VA_ARGS__) // 警告，用于会有
 #define error(...) printf("[SSC][Error] " __VA_ARGS__)
 #else
 #define print(...)
