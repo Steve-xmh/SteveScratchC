@@ -12,9 +12,10 @@
 
 typedef enum SSCScratchObjType
 {
-	SPRITE = 1,
-	SPRITE_CLONE,
-	STAGE,
+	JUST_OBJ = 0, /** 只是一个 Obj，不是任何子对象 */
+	SPRITE, /** 一个角色本体 */
+	SPRITE_CLONE, /** 一个角色克隆体 */
+	STAGE, /** 一个舞台 */
 } SSCScratchObjType;
 
 typedef struct SSCScratchObj
@@ -39,16 +40,15 @@ typedef struct SSCScratchObj
 
 typedef struct SSCScratchObjClass
 {
-	GObject parent_class;
+	GObjectClass parent_class;
 } SSCScratchObjClass;
-
-
 
 #define SSC_SCRATCH_OBJ_TYPE (ssc_scratch_obj_get_type())
 #define SSC_SCRATCH_OBJ(obj) (G_TYPE_CHECK_INSTANCE_CAST((obj), SSC_SCRATCH_OBJ_TYPE, SSCScratchObj))
 #define SSC_SCRATCH_OBJ_CLASS(class) (G_TYPE_CHECK_CLASS_CAST((class), SSC_SCRATCH_OBJ_TYPE, SSCScratchObjClass))
 #define SSC_IS_SCRATCH_OBJ(obj) (G_TYPE_CHECK_INSTANCE_TYPE((obj), SSC_SCRATCH_OBJ_TYPE))
 
-static SSCScratchObj *ssc_scratch_obj_new(void);
+GType ssc_scratch_obj_get_type(void);
+SSCScratchObj *ssc_scratch_obj_new(void);
 
 #endif
