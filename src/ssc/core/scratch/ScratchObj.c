@@ -12,7 +12,7 @@ static void ssc_scratch_obj_init(SSCScratchObj *s)
     s->scriptsComments = g_ptr_array_new();
     s->sounds = g_ptr_array_new();
     s->costumes = g_ptr_array_new();
-    s->currentCostumeIndex = g_ptr_array_new();
+    s->currentCostumeIndex = 0;
     s->volume = 1;
     s->instrument = 0;
 
@@ -31,5 +31,5 @@ SSCScratchObj* ssc_scratch_obj_new()
 
 gboolean ssc_scratch_obj_draw(SSCScratchObj *s, cairo_t *cr)
 {
-    
+    return TRUE;
 }

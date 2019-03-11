@@ -30,7 +30,7 @@ typedef struct SSCScratchObj
 	GPtrArray *scriptsComments; /** 对象的脚本注释 */
 	GPtrArray *sounds;			/** 对象的音效集 */
 	GPtrArray *costumes;		/** 对象的造型集 */
-	guint *currentCostumeIndex; /** 对象的当前造型编号 */
+	guint currentCostumeIndex;  /** 对象的当前造型编号 */
 	gdouble volume;				/** 对象音量 */
 	guint instrument;			/** 对象使用的乐器 */
 	// 分割线 ---------------
@@ -56,6 +56,6 @@ SSCScratchObj *ssc_scratch_obj_new(void);
  * @param[in] cr 该对象所使用的 Cairo 绘图指针
  * @return 重绘是否成功，成功返回 TRUE，否则返回 FALSE。
  */
-gboolean ssc_scratch_obj_draw(SSCScratchObj *s, cairo_t *cr); 
+gboolean ssc_scratch_obj_draw(SSCScratchObj *s, cairo_t *cr);
 
 #endif

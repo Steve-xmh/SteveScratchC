@@ -36,6 +36,8 @@ if (CMAKE_BUILD_TYPE MATCHES "Debug")
     add_definitions("-DDEBUG")
 endif(CMAKE_BUILD_TYPE MATCHES "Debug")
 
+add_definitions("-Wall")
+
 add_executable(SteveScratchC ${SOURCE_FILE})
 add_definitions (${GTK3_CFLAGS_OTHER})
 target_link_libraries (SteveScratchC ${GTK3_LIBRARIES})
