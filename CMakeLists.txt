@@ -37,6 +37,7 @@ if (CMAKE_BUILD_TYPE MATCHES "Debug")
 endif(CMAKE_BUILD_TYPE MATCHES "Debug")
 
 add_definitions("-Wall")
+add_definitions("-Werror")
 
 add_executable(SteveScratchC ${SOURCE_FILE})
 add_definitions (${GTK3_CFLAGS_OTHER})
