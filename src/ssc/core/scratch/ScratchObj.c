@@ -16,8 +16,7 @@ static void ssc_scratch_obj_init(SSCScratchObj *s)
     s->volume = 1;
     s->instrument = 0;
 
-    s->localVariables = g_ptr_array_new();
-    s->localLists = g_ptr_array_new();
+    s->currentCostumeCache = NULL;
 }
 
 static void ssc_scratch_obj_class_init(SSCScratchObjClass *s)
@@ -30,3 +29,7 @@ SSCScratchObj* ssc_scratch_obj_new()
     return (SSCScratchObj*)g_object_new(SSC_SCRATCH_OBJ_TYPE,NULL);
 }
 
+gboolean ssc_scratch_obj_draw(SSCScratchObj *s, cairo_t *cr)
+{
+    
+}

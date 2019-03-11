@@ -26,7 +26,7 @@ typedef struct SSCScratchSprite
 	gdouble scratchY;								/** 角色所在的中心垂直位置，以舞台中心为原点 */
 	gdouble direction;								/** 角色的当前角度，以度为单位，90度为朝右 */
 	SSCScratchSpriteRotationStyle rotationStyle;	/** 角色的旋转方式，具体请参考 SSCScratchSpriteRotationStyle 枚举 */
-
+	
 	gboolean isDraggable;							/** 是否可以在播放时被鼠标拖拽 */
 	
 } SSCScratchSprite; /** ScratchSprite 对象 */
