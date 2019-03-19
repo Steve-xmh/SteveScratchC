@@ -21,3 +21,5 @@ build/cmake_install.cmake
 build/SteveScratchC.exe
 build/Makefile
 build/compile_commands.json
+doxygen/doxyfile
+lib_finder.script
