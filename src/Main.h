@@ -7,6 +7,9 @@
 #ifndef HEADER_MAIN
 #define HEADER_MAIN
 
+#include "Libs.h"
+#include "ssc/core/scratch/ScratchStage.h"
+
 int ssc_init(void); /** SteveScratchC 初始化函数 */
 
 #endif
