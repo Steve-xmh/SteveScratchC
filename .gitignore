@@ -1,6 +1,7 @@
 .vscode
-bin
-obj
+bin/
+obj/
+CMakeFiles
 SSCWindow.glade~
 #SSCWindow.glade#
 SteveScratchC.cbp
@@ -9,4 +10,19 @@ SteveScratchC.depend
 SteveScratchC.layout
 SteveScratchC.cbp
 SteveScratchC.layout
+<<<<<<< HEAD
+=======
+CMakeCache.txt
+CMakeFiles/CMakeError.log
+CMakeFiles/CMakeOutput.log
+CMakeFiles/cmake.check_cache
+CMakeFiles/3.13.3/CMakeSystem.cmake
+CMakeFiles/3.13.3/CompilerIdC/CMakeCCompilerId.c
+CMakeFiles/3.13.3/CompilerIdCXX/CMakeCXXCompilerId.cpp
+build/cmake_install.cmake
+build/SteveScratchC.exe
+build/Makefile
+build/compile_commands.json
+doxygen/doxyfile
+>>>>>>> 63213d1ffd7e7031751e816f88e50b934109be69
 lib_finder.script
