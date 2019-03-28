@@ -95,7 +95,7 @@
     </child>
   </object>
   <object class="GtkTextBuffer" id="textbuffer1"/>
-  <object class="GtkWindow" id="mainWindow">
+  <object class="GtkWindow" id="ssc-main-window">
     <property name="can_focus">False</property>
     <child type="titlebar">
       <object class="GtkHeaderBar" id="ssc-header-bar">
