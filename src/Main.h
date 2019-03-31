@@ -8,6 +8,8 @@
 #define HEADER_MAIN
 
 #include "Libs.h"
+
+#include "ssc/core/SSCCore.h"
 #include "ssc/ui/SSCUI.h"
 #include "ssc/core/scratch/ScratchStage.h"
 

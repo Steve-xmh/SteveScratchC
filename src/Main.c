@@ -43,5 +43,6 @@ int ssc_init()
 	GError *err = NULL;
     info("Initaling SteveScratchC!\n");
 	SSC_INIT_CHECK(ssc_ui_init);
+	SSC_INIT_CHECK(ssc_core_init);
     return 0;
 }

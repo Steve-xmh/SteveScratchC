@@ -1,7 +1,10 @@
 #include "SSCUI.h"
 
 static GtkBuilder *loadedBuilder; // 存放已经加载的页面
+
 static GtkWidget *mainWindow; // 主窗口
+static GtkWidget *menuAbout; // 关于菜单项
+static GtkWidget *menuOpen; // 打开菜单项
 
 static gchar *loadObjFailedMsg = "Can't load widget \"%s\" in glade file.";
 
@@ -21,8 +24,17 @@ void ssc_ui_init(GError **err)
 	if(gtk_builder_add_from_file(loadedBuilder,"SSCWindow.glade",err))
 	{
 		SSC_UI_GET_OBJ(mainWindow,"ssc-main-window");
+		SSC_UI_GET_OBJ(menuAbout,"ssc-menu-about");
+		SSC_UI_GET_OBJ(menuOpen,"ssc-menu-open");
+		if (ssc_ui_setup_events(err)) // 设置事件
+		{
+
+		}
+		else{return;}
 	}
 	else{return;}
 }
 
 GtkWidget *ssc_ui_get_widget_main_window(){return mainWindow;}
+GtkWidget *ssc_ui_get_widget_menu_about(){return menuAbout;}
+GtkWidget *ssc_ui_get_widget_menu_open(){return menuOpen;}
