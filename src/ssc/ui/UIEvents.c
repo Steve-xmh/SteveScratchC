@@ -27,7 +27,31 @@ void ssc_ui_show_about(GtkMenuItem *item, gpointer data)
 
 void ssc_ui_open_project(GtkMenuItem *item, gpointer data)
 {
-	GtkFileChooserNative *file = gtk_file_chooser_native_new("请选择一个 Scratch 工程",GTK_WINDOW(ssc_ui_get_widget_main_window()),GTK_FILE_CHOOSER_ACTION_OPEN,"_Open","_Cancel");
-	gtk_native_dialog_run(GTK_NATIVE_DIALOG(file));
+	GtkFileChooserNative *file = gtk_file_chooser_native_new("请选择一个 Scratch 工程",GTK_WINDOW(ssc_ui_get_widget_main_window()),GTK_FILE_CHOOSER_ACTION_OPEN,NULL,NULL);
+
+	GtkFileFilter *filter = gtk_file_filter_new();
+	GtkFileFilter *allFilter = gtk_file_filter_new();
+
+	gtk_file_filter_set_name(filter,"Scratch 工程文件");
+	gtk_file_filter_set_name(allFilter,"所有文件");
+
+	gtk_file_filter_add_pattern(filter,"*.sb");
+	gtk_file_filter_add_pattern(filter,"*.sb2");
+	gtk_file_filter_add_pattern(filter,"*.sb3");
+	gtk_file_filter_add_pattern(allFilter,"*.*");
+
+	gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(file),filter);
+	gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(file),allFilter);
+
+	gint ret = gtk_native_dialog_run(GTK_NATIVE_DIALOG(file));
+
+	if(ret == GTK_RESPONSE_ACCEPT)
+	{
+		gchar *filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file));
+		ssc_core_push_command(2,SSC_CORE_COMMAND_OPEN_PROJECT,filename);
+	}
+
 	g_object_unref(file);
+	g_object_unref(filter);
+	g_object_unref(allFilter);
 }
