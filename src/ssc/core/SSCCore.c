@@ -18,47 +18,47 @@ void ssc_core_init(GError **err)
 
 void *ssc_core_main(gpointer data)
 {
+	info("[Core] Core is ready!\n");
 	while(currentCore->status)
 	{
-		gpointer *command = ssc_core_get_command();
+		GPtrArray *command = ssc_core_get_command();
 		if(command)
 		{
-			info("[Core] Get a command:\n");
-			guint i = 0;
-			while(*(command+i))
+			switch(*(int*)g_ptr_array_index(command,0))
 			{
-				info("[Core][%d] %p",i,*(command+i));
-				g_free(*(command+i));
-				i++;
+			case SSC_CORE_COMMAND_OPEN_PROJECT:
+				info("[Core] Opening project: %s\n",(gchar*)g_ptr_array_index(command,1));
+				break;
+			default:
+				warn("[Core] Unknown command: %d\n",*(int*)g_ptr_array_index(command,1));
 			}
-			g_free(command);
+			g_ptr_array_free(command,TRUE); // 释放成员指针
 		}
-		g_usleep(16000);
+		g_usleep(1000);
 	}
 	return NULL;
 }
 
-gpointer* ssc_core_get_command()
+GPtrArray *ssc_core_get_command()
 {
 	g_mutex_lock(&currentCore->mainThread_q_m);
 	guint *dataNum = (guint*)g_async_queue_try_pop(currentCore->mainThread_q);
-	gpointer *data = NULL;
+	GPtrArray *data = NULL;
 	if (dataNum)
 	{
-		data = g_new(gpointer,*dataNum+1);
+		data = g_ptr_array_new();
 		guint i;
 		for (i = 0; i<*dataNum; i++)
 		{
-			data[i] = g_async_queue_try_pop(currentCore->mainThread_q);
-			if(!data[i]) break;
+			g_ptr_array_add(data,g_async_queue_try_pop(currentCore->mainThread_q));
 		}
-		data[i+1] = NULL;
 	}
+	g_free(dataNum);
 	g_mutex_unlock(&currentCore->mainThread_q_m);
 	return data;
 }
 
-// 指令格式：指令数量,指针...
+// 指令格式：指令数量,指令类型,指针(参数)...
 void ssc_core_push_command(guint dataNum,...)
 {
 	va_list arg = NULL;
@@ -74,7 +74,6 @@ void ssc_core_push_command(guint dataNum,...)
 	{
 		gpointer a = va_arg(arg,gpointer);
 		g_async_queue_push(currentCore->mainThread_q,a);
-		printf("F:%p\t",a);
 	}
 
 	g_mutex_unlock(&currentCore->mainThread_q_m);

@@ -5,6 +5,7 @@ static GtkBuilder *loadedBuilder; // 存放已经加载的页面
 static GtkWidget *mainWindow; // 主窗口
 static GtkWidget *menuAbout; // 关于菜单项
 static GtkWidget *menuOpen; // 打开菜单项
+static GtkWidget *buttonSSCN; // 切换至社区网络
 
 static gchar *loadObjFailedMsg = "Can't load widget \"%s\" in glade file.";
 
@@ -26,6 +27,7 @@ void ssc_ui_init(GError **err)
 		SSC_UI_GET_OBJ(mainWindow,"ssc-main-window");
 		SSC_UI_GET_OBJ(menuAbout,"ssc-menu-about");
 		SSC_UI_GET_OBJ(menuOpen,"ssc-menu-open");
+		SSC_UI_GET_OBJ(buttonSSCN,"ssc-sscn-button");
 		if (ssc_ui_setup_events(err)) // 设置事件
 		{
 

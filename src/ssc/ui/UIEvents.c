@@ -48,10 +48,9 @@ void ssc_ui_open_project(GtkMenuItem *item, gpointer data)
 	if(ret == GTK_RESPONSE_ACCEPT)
 	{
 		gchar *filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(file));
-		ssc_core_push_command(2,SSC_CORE_COMMAND_OPEN_PROJECT,filename);
+		SSC_CORE_CMD(cmd,SSC_CORE_COMMAND_OPEN_PROJECT);
+		ssc_core_push_command(2,cmd,filename);
 	}
 
 	g_object_unref(file);
-	g_object_unref(filter);
-	g_object_unref(allFilter);
 }

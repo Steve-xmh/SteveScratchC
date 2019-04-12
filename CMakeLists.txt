@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD 11)
 set(PROJECT_DIR
     src
     src/ssc
-    src/ssc/interface
+    src/ssc/ui
     src/ssc/lua
     src/ssc
     src/ssc/core
