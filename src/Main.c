@@ -12,7 +12,7 @@ int main(int argn, char* argv[])
 // 用于报错退出
 static void ssc_report_error(GError *err)
 {
-	error("Init: %d (0x%X)\t%s\n",err->code,err->code,err->message);
+	error("Init: %d (0x%X)\t%s\n",err->code,err->code,g_locale_from_utf8(err->message,-1,NULL,NULL,NULL));
 	GtkWidget *dialog = gtk_message_dialog_new_with_markup(NULL,GTK_DIALOG_MODAL | GTK_DIALOG_USE_HEADER_BAR,GTK_MESSAGE_ERROR,GTK_BUTTONS_CLOSE,
 															"<b>警告</b>：\n"
 															"发生了初始化错误， SteveScratchC 没有正常启动\n"

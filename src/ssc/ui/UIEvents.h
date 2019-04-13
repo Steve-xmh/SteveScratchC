@@ -9,6 +9,7 @@
 #include "../../Libs.h"
 
 #include "SSCUI.h"
+#include "UI2Core.h"
 #include "../core/SSCCore.h"
 
 gboolean ssc_ui_setup_events(GError**);
