@@ -1,4 +1,5 @@
-/* SSCUI.c/SSCUI.h
+/*
+ * SSCUI.c/SSCUI.h
  * 用于提供 UI 的操作接口
  */
 
@@ -20,5 +21,6 @@ GtkWidget *ssc_ui_get_widget_process_bar(void);
 GtkWidget *ssc_ui_get_widget_process_bar_label(void);
 GtkWidget *ssc_ui_get_widget_loading_widget(void);
 GtkWidget *ssc_ui_get_widget_overlay(void);
+GtkWidget *ssc_ui_get_widget_gl_area(void);
 
 #endif // HEADER_SSC_UI_SSCUI

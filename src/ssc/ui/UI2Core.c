@@ -41,3 +41,8 @@ gboolean ssc_ui2core_event(gpointer data)
 	return TRUE;
 }
 
+gboolean ssc_ui2core_draw_event(gpointer data)
+{
+	gtk_widget_queue_draw(GTK_WIDGET(data));
+	return TRUE;
+}

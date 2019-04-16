@@ -7,19 +7,7 @@
 #ifndef HEADER_LIBS
 #define HEADER_LIBS
 
-// printf 转换
-#ifdef DEBUG
-#define print(...) printf(__VA_ARGS__) // 日常输出
-#define info(...) printf("[SSC][Info]" __VA_ARGS__) // 信息
-#define warn(...) printf("[SSC][Warn]" __VA_ARGS__) // 警告，用于会有
-#define error(...) printf("[SSC][Error]" __VA_ARGS__) // 错误，你懂的
-#else
-#define print(...)
-#define info(...)
-#define warn(...)
-#define error(...)
-#endif
-
+// 标准库
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -36,5 +24,21 @@
 // MiniZIP
 #include <unzip.h>
 #include <zip.h>
+
+// epoxy
+#include <epoxy/gl.h>
+
+// printf 转换
+#ifdef DEBUG
+#define print(...) printf(__VA_ARGS__) // 日常输出
+#define info(...) printf("[SSC][Info]" __VA_ARGS__) // 信息
+#define warn(...) printf("[SSC][Warn]" __VA_ARGS__) // 警告，用于会有
+#define error(...) printf("[SSC][Error]" __VA_ARGS__) // 错误，你懂的
+#else
+#define print(...)
+#define info(...)
+#define warn(...)
+#define error(...)
+#endif
 
 #endif

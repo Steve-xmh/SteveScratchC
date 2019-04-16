@@ -11,6 +11,7 @@
 #include "SSCUI.h"
 #include "UI2Core.h"
 #include "../core/SSCCore.h"
+#include "SSCGL.h"
 
 gboolean ssc_ui_setup_events(GError**);
 void ssc_ui_show_about(GtkMenuItem *item, gpointer data);

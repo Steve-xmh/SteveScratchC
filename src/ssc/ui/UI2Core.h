@@ -1,6 +1,6 @@
 /*
  * UI2Core.c/UI2Core.h
- * 控制从核心端传回的指令
+ * 处理从核心端传回的指令
  */
 
 #ifndef HEADER_SSC_UI_UI2CORE
@@ -13,5 +13,6 @@
 #include "../core/SSCCore.h"
 
 gboolean ssc_ui2core_event(gpointer data);
+gboolean ssc_ui2core_draw_event(gpointer data);
 
 #endif // HEADER_SSC_UI_UI2CORE

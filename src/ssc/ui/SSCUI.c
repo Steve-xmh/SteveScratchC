@@ -11,13 +11,12 @@ static GtkWidget *processBar; // 进度条
 static GtkWidget *processBarLabel; // 进度条文本
 static GtkWidget *loadingWidget; // 进度条文本
 static GtkWidget *sscOverlay; // 进度条文本
+static GtkWidget *stagePart; // 渲染窗口
+static GtkWidget *glArea; // 渲染窗口
 
 static gchar *loadObjFailedMsg = "Can't load widget \"%s\" in glade file.";
 
-GtkBuilder *ssc_ui_get_builder()
-{
-	return loadedBuilder;
-}
+GtkBuilder *ssc_ui_get_builder(){return loadedBuilder;}
 
 // 加载指定控件并赋值到一个变量中， obj 为变量名称， name 为控件名称
 #define SSC_UI_GET_OBJ(obj,name)\
@@ -38,6 +37,12 @@ void ssc_ui_init(GError **err)
 		SSC_UI_GET_OBJ(processBarLabel,"ssc-loading-bar-label");
 		SSC_UI_GET_OBJ(loadingWidget,"ssc-loading-widget");
 		SSC_UI_GET_OBJ(sscOverlay,"ssc-overlay");
+		SSC_UI_GET_OBJ(stagePart,"ssc-stage-part");
+
+		glArea = gtk_gl_area_new();
+		gtk_box_pack_end(GTK_BOX(stagePart),glArea,TRUE,TRUE,0);
+		gtk_widget_set_size_request(glArea,480,320);
+
 		if (ssc_ui_setup_events(err)) // 设置事件
 		{
 
@@ -55,3 +60,4 @@ GtkWidget *ssc_ui_get_widget_process_bar(){return processBar;}
 GtkWidget *ssc_ui_get_widget_process_bar_label(){return processBarLabel;}
 GtkWidget *ssc_ui_get_widget_loading_widget(){return loadingWidget;}
 GtkWidget *ssc_ui_get_widget_overlay(){return sscOverlay;}
+GtkWidget *ssc_ui_get_widget_gl_area(){return glArea;}
