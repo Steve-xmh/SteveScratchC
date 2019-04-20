@@ -9,7 +9,9 @@
 
 // 标准库
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
 
 // GTK+ 3.0
 // 禁止使用已弃用的模块

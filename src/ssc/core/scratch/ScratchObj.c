@@ -29,7 +29,7 @@ SSCScratchObj* ssc_scratch_obj_new()
     return (SSCScratchObj*)g_object_new(SSC_SCRATCH_OBJ_TYPE,NULL);
 }
 
-gboolean ssc_scratch_obj_draw(SSCScratchObj *s, cairo_t *cr)
+gboolean ssc_scratch_obj_draw(SSCScratchObj *s)
 {
     return TRUE;
 }

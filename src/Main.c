@@ -5,6 +5,7 @@ int main(int argn, char* argv[])
     gtk_init(&argn,&argv);
     if(ssc_init()) return -1;
     gtk_widget_show_all(ssc_ui_get_widget_main_window());
+    // gtk_widget_show(ssc_ui_get_widget_gl_area());
     gtk_main();
     return 0;
 }

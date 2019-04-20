@@ -1,6 +1,6 @@
 /** ScratchObj.c/ScratchObj.h
  *
- * SSCScratchStage 和 SSCScratchSprite 的父类 
+ * SSCScratchStage 和 SSCScratchSprite 的父类
  * 存储了它们共有的信息
  *
  */
@@ -52,10 +52,9 @@ SSCScratchObj *ssc_scratch_obj_new(void);
 
 /**
  * @brief 重绘一个 ScratchObj 对象，一般对 Obj 进行了旋转或者切换造型或者是切换特效的话就需要调用本函数重绘角色。
- * @param[in] s 欲进行操作的 ScratchObj 对象
- * @param[in] cr 该对象所使用的 Cairo 绘图指针
+ * @param 欲进行操作的 ScratchObj 对象
  * @return 重绘是否成功，成功返回 TRUE，否则返回 FALSE。
  */
-gboolean ssc_scratch_obj_draw(SSCScratchObj *s, cairo_t *cr);
+gboolean ssc_scratch_obj_draw(SSCScratchObj *s);
 
 #endif
