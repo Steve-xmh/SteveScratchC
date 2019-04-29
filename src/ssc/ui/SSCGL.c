@@ -25,10 +25,7 @@ static gfloat verts[]={
 	-1.0f, -1.0f, 0.0f,
      1.0f, -1.0f, 0.0f,
      1.0f,  1.0f, 0.0f,
-
-      1.0f, 1.0f, 0.0f,
-     -1.0f, 1.0f, 0.0f,
-     -1.0f,-1.0f, 0.0f
+	-1.0f, 1.0f, 0.0f
 };
 
 static gboolean ssc_ui_gl_load_shader(GLuint *shader, gchar *fileName); /**< 加载着色器到句柄，否则输出错误到标准输出 */
@@ -78,7 +75,7 @@ static gboolean ssc_ui_gl_load_shader(GLuint *shader, gchar *fileName)
 	glShaderSource(*shader,1,(const GLchar**)&data,NULL);
 	glCompileShader(*shader);
 
-	// free(data); // ?
+	free(data); // ?
 
 	int suc;char infoLog[512];
 	glGetShaderiv(*shader,GL_COMPILE_STATUS,&suc);
@@ -93,7 +90,7 @@ static gboolean ssc_ui_gl_load_shader(GLuint *shader, gchar *fileName)
 	}
 
 	// glDeleteShader(*shader);
-	info("[GL]Loaded %d shader file: %s\n",shaderType,fileName);
+	info("[GL]Loaded shader file: %s\n",fileName);
 
 	return TRUE;
 }
@@ -156,6 +153,13 @@ void ssc_ui_gl_init(GtkWidget *area)
 	glBindBuffer(GL_ARRAY_BUFFER,0);
 	glBindVertexArray(0);
 
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+
+	// glEnable(GL_POINT_SMOOTH);
+	// glEnable(GL_LINE_SMOOTH);
+	glEnable(GL_POLYGON_SMOOTH);
+
 	info("[GL]GLArea Ready!\n");
 }
 
@@ -171,19 +175,21 @@ gboolean ssc_ui_gl_draw(GtkWidget *area,GdkGLContext *context)
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 	glClear (GL_COLOR_BUFFER_BIT);
 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	// glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	glUseProgram(ssc_stage_shader.m);
 	glBindVertexArray(VAO);
 
 	int sWidthLocation = glGetUniformLocation(ssc_stage_shader.m,"sWidth");
 	int sHeightLocation = glGetUniformLocation(ssc_stage_shader.m,"sHeight");
+	int clockLocation = glGetUniformLocation(ssc_stage_shader.m,"clock");
 	GLfloat w,h;
 	w = gtk_widget_get_allocated_width(area);
 	h = gtk_widget_get_allocated_height(area);
 	glUniform1f(sWidthLocation,w);
 	glUniform1f(sHeightLocation,h);
-	glDrawArrays(GL_TRIANGLES,0,6);
+	glUniform1f(clockLocation,(GLfloat)clock()/(GLfloat)CLOCKS_PER_SEC);
+	glDrawArrays(GL_TRIANGLE_FAN,0,4);
 
 	return TRUE;
 }

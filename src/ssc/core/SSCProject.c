@@ -23,13 +23,18 @@ void ssc_core_load_project(gchar *fileAdd)
     {
         do
         {
-			gchar *processLabel[] = {"Find file: ",NULL,NULL};
 			unzGetCurrentFileInfo(file,&fileInfo,str,sizeof(str),NULL,0,NULL,0);
-			processLabel[1] = str;
 			info("[Core]Find file in project: %s\n",str);
 			SSC_CMD(cmd,SSC_UI_SET_PROCESS);
 			SSC_CMD_D(p,-1.0);
-			ssc_core_ui_push_command(3,cmd,p,g_strdupv(processLabel));
+
+			ssc_core_ui_push_command(3,cmd,p,g_strconcat(
+															"加载文件：",
+															g_locale_to_utf8(str,-1,NULL,NULL,NULL),
+															NULL
+															));
+			// g_usleep(10000);
+
         }
         while(unzGoToNextFile(file)!=UNZ_END_OF_LIST_OF_FILE);
     }

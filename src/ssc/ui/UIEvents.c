@@ -10,20 +10,25 @@ gboolean ssc_ui_setup_events(GError **err)
 
 	// 接收 Core 指令
 	g_timeout_add(10,ssc_ui2core_event,NULL);
+	g_timeout_add(16,ssc_ui_gl_event,(gpointer)ssc_ui_get_widget_gl_area());
 
 	// 渲染画面
 	g_signal_connect(ssc_ui_get_widget_gl_area(),"realize",G_CALLBACK(ssc_ui_gl_init),NULL);
 	g_signal_connect(ssc_ui_get_widget_gl_area(),"render",G_CALLBACK(ssc_ui_gl_draw),NULL);
 
-	gtk_progress_bar_set_pulse_step(GTK_PROGRESS_BAR(ssc_ui_get_widget_process_bar()),0.01);
+	return TRUE;
+}
 
+gboolean ssc_ui_gl_event(gpointer area)
+{
+	gtk_widget_queue_draw((GtkWidget*)area);
 	return TRUE;
 }
 
 void ssc_ui_show_about(GtkMenuItem *item, gpointer data)
 {
 	GtkWidget *msg = gtk_about_dialog_new();
-	const gchar *str[] = {"SteveXMH","Alex Cui","SinanGentoo","Sparrow",NULL};
+	const gchar *str[] = {"SteveXMH","Alex Cui","SinanGentoo",NULL};
 
 	static GdkPixbuf *logo;
 	if(!logo)

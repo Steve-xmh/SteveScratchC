@@ -18,6 +18,9 @@
 #define GTK_DISABLE_DEPRECATED
 #include <gtk/gtk.h>
 
+// json-glib
+// #include <json-glib.h>
+
 // Lua
 #include <lua.h>
 #include <lualib.h>

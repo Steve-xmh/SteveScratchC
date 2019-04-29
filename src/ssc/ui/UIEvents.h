@@ -14,6 +14,7 @@
 #include "SSCGL.h"
 
 gboolean ssc_ui_setup_events(GError**);
+gboolean ssc_ui_gl_event(gpointer area);
 void ssc_ui_show_about(GtkMenuItem *item, gpointer data);
 void ssc_ui_open_project(GtkMenuItem *item, gpointer data);
 

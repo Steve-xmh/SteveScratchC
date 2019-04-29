@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.1 -->
+<!-- Generated with glade 3.22.1 
+
+Copyright (C) 
+
+This file is part of SteveScratchC.
+
+SteveScratchC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SteveScratchC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SteveScratchC.  If not, see <http://www.gnu.org/licenses/>.
+
+Author: SteveXMH
+
+-->
 <interface>
   <requires lib="gtk+" version="3.20"/>
   <!-- interface-css-provider-path Flat-Remix-GTK-Blue\\gtk-3.0\\gtk.css -->
+  <!-- interface-license-type gplv3 -->
+  <!-- interface-name SteveScratchC -->
+  <!-- interface-description A Scratch-like editor made by C. -->
+  <!-- interface-authors SteveXMH -->
   <object class="GtkEntryBuffer" id="entrybuffer1">
     <property name="text" translatable="yes">100</property>
   </object>
@@ -1326,8 +1351,7 @@
               <object class="GtkProgressBar" id="ssc-loading-bar">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="fraction">0.13</property>
-                <property name="pulse_step">0.20000000000000001</property>
+                <property name="pulse_step">0.01</property>
                 <property name="ellipsize">middle</property>
               </object>
               <packing>
