@@ -21,6 +21,9 @@ GtkWidget *ssc_ui_get_widget_process_bar(void);
 GtkWidget *ssc_ui_get_widget_process_bar_label(void);
 GtkWidget *ssc_ui_get_widget_loading_widget(void);
 GtkWidget *ssc_ui_get_widget_overlay(void);
-GtkWidget *ssc_ui_get_widget_gl_area(void);
+GtkWidget *ssc_ui_get_widget_render_area(void);
+GtkWidget *ssc_ui_get_widget_stage_fullscreen_button(void);
+GtkWidget *ssc_ui_get_widget_stage_part(void);
+GtkWidget *ssc_ui_get_widget_command_bar(void);
 
 #endif // HEADER_SSC_UI_SSCUI

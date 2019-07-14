@@ -3,6 +3,7 @@
 gboolean ssc_ui2core_event(gpointer data)
 {
 	clock_t lt = clock();
+	gboolean needPulse = FALSE;
 	while(1)
 	{
 		GPtrArray *command = ssc_core_ui_get_command();
@@ -19,7 +20,7 @@ gboolean ssc_ui2core_event(gpointer data)
 					// info("[UI]Set process %f\n",pos);
 					if(pos == -1.0)
 					{
-						gtk_progress_bar_pulse(GTK_PROGRESS_BAR(ssc_ui_get_widget_process_bar()));
+						needPulse = TRUE;
 					}else{
 						gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(ssc_ui_get_widget_process_bar()),pos>1.0?1.0:pos<0.0?0.0:pos);
 					}
@@ -34,7 +35,8 @@ gboolean ssc_ui2core_event(gpointer data)
 				break;
 			case SSC_UI_HIDE_PROCESS: // 隐藏进度
 				{
-					gtk_stack_set_visible_child(GTK_STACK(ssc_ui_get_widget_main_stack()),ssc_ui_get_widget_overlay());
+					if( gtk_stack_get_visible_child(GTK_STACK(ssc_ui_get_widget_main_stack())) != ssc_ui_get_widget_overlay())
+						gtk_stack_set_visible_child(GTK_STACK(ssc_ui_get_widget_main_stack()),ssc_ui_get_widget_overlay());
 				}
 				break;
 			default:
@@ -49,6 +51,8 @@ gboolean ssc_ui2core_event(gpointer data)
 			break;
 		}
 	}
+	if(needPulse)
+		gtk_progress_bar_pulse(GTK_PROGRESS_BAR(ssc_ui_get_widget_process_bar()));
 	return TRUE;
 }
 

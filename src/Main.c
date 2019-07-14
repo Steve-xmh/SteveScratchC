@@ -46,6 +46,7 @@ int ssc_init()
 
 	SSC_INIT_CHECK(ssc_ui_init);
 	SSC_INIT_CHECK(ssc_core_init);
+	SSC_INIT_CHECK(ssc_lua_init);
 
     return 0;
 }

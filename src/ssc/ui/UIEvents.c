@@ -7,14 +7,13 @@ gboolean ssc_ui_setup_events(GError **err)
 	// 菜单
 	g_signal_connect(ssc_ui_get_widget_menu_about(),"activate",G_CALLBACK(ssc_ui_show_about),NULL);
 	g_signal_connect(ssc_ui_get_widget_menu_open(),"activate",G_CALLBACK(ssc_ui_open_project),NULL);
+	g_signal_connect(ssc_ui_get_widget_stage_fullscreen_button(),"clicked",G_CALLBACK(ssc_ui_change_fullscreen),NULL);
+
+	// Lua
+	g_signal_connect(ssc_ui_get_widget_command_bar(),"activate",G_CALLBACK(ssc_ui_do_string),NULL);
 
 	// 接收 Core 指令
 	g_timeout_add(10,ssc_ui2core_event,NULL);
-	g_timeout_add(16,ssc_ui_gl_event,(gpointer)ssc_ui_get_widget_gl_area());
-
-	// 渲染画面
-	g_signal_connect(ssc_ui_get_widget_gl_area(),"realize",G_CALLBACK(ssc_ui_gl_init),NULL);
-	g_signal_connect(ssc_ui_get_widget_gl_area(),"render",G_CALLBACK(ssc_ui_gl_draw),NULL);
 
 	return TRUE;
 }
@@ -23,6 +22,49 @@ gboolean ssc_ui_gl_event(gpointer area)
 {
 	gtk_widget_queue_draw((GtkWidget*)area);
 	return TRUE;
+}
+
+void ssc_ui_do_string(GtkEntry *entry, gpointer data)
+{
+	ssc_lua_dostring(gtk_entry_get_text(entry));
+}
+
+void ssc_ui_change_fullscreen(GtkButton *button, gpointer data)
+{
+	static gboolean isFullscreen;
+	static gboolean inited;
+	static GtkWidget *win;
+	static GtkWidget *root;
+	static GtkWidget *stage;
+	static GtkWidget *stageParent;
+	isFullscreen = !isFullscreen;
+	if(!inited)
+	{
+		win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+		gtk_container_set_border_width(GTK_CONTAINER(win),5);
+		stage = ssc_ui_get_widget_stage_part();
+		stageParent = gtk_widget_get_parent(stage);
+		root = gtk_widget_get_toplevel(stage);
+		gtk_widget_set_realized(stage,TRUE);
+		inited = TRUE;
+	}
+	g_object_ref((gpointer)stage);
+	if(isFullscreen)
+	{
+		gtk_container_remove(GTK_CONTAINER(stageParent),stage);
+		gtk_container_add(GTK_CONTAINER(win),stage);
+		gtk_widget_show(win);
+		gtk_widget_hide(root);
+		gtk_window_fullscreen(GTK_WINDOW(win));
+	}else
+	{
+		gtk_container_remove(GTK_CONTAINER(win),stage);
+		gtk_container_add(GTK_CONTAINER(stageParent),stage);
+		gtk_widget_show(root);
+		gtk_widget_hide(win);
+		gtk_window_fullscreen(GTK_WINDOW(win));
+	}
+	g_object_unref((gpointer)stage);
 }
 
 void ssc_ui_show_about(GtkMenuItem *item, gpointer data)

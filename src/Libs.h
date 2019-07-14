@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
+#include <time.h>
 
 // GTK+ 3.0
 // 禁止使用已弃用的模块
@@ -23,15 +24,19 @@
 
 // Lua
 #include <lua.h>
-#include <lualib.h>
 #include <lauxlib.h>
+#include <lualib.h>
+#include <luajit.h>
+#ifndef LUA_OK
+#define LUA_OK 0
+#endif // LUA_OK
 
 // MiniZIP
 #include <unzip.h>
 #include <zip.h>
 
 // epoxy
-#include <epoxy/gl.h>
+// #include <epoxy/gl.h>
 
 // printf 转换
 #ifdef DEBUG

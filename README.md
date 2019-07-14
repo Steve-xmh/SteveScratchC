@@ -13,4 +13,5 @@
 ## 引用库
 - GTK+ 3.0 (LGPL v2)
 - Lua 5.3 (MIT)
+- LuaJIT 2.0.5 (MIT)
 - librsvg 2.0 (LGPL v2)
